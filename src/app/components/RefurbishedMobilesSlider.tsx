@@ -179,17 +179,18 @@ export default function RefurbishedMobilesSlider() {
 
   // Mouse Drag Start
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
-    if ((e.target as HTMLElement).closest("button")) return;
+  if (e.button !== 0) return;
+  if ((e.target as HTMLElement).closest("button, a")) return;
 
-    const container = sliderRef.current;
-    if (!container) return;
+  const container = sliderRef.current;
+  if (!container) return;
 
-    setIsDragging(true);
-    setHasDragged(false);
+  setIsDragging(true);
+  setHasDragged(false);
 
-    setStartX(e.pageX - container.offsetLeft);
-    setScrollLeftStart(container.scrollLeft);
-  };
+  setStartX(e.pageX - container.offsetLeft);
+  setScrollLeftStart(container.scrollLeft);
+};
 
   // Mouse Drag Move
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -208,13 +209,14 @@ export default function RefurbishedMobilesSlider() {
   };
 
   // Stop Dragging
-  const stopDragging = () => {
-    setIsDragging(false);
-  };
-
+    const stopDragging = () => {
+    if (isDragging) {
+        setIsDragging(false);
+    }
+    };
   return (
     <section
-      className="w-full bg-white py-8 sm:py-10 select-none"
+      className="relative w-full bg-white py-8 sm:py-10 select-none"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => {
         setIsPaused(false);
@@ -251,16 +253,24 @@ export default function RefurbishedMobilesSlider() {
           </button>
 
           {/* Scrollable Track */}
-          <div
-            ref={sliderRef}
-            onMouseDown={handleMouseDown}
-            onMouseMove={handleMouseMove}
-            onMouseUp={stopDragging}
-            onMouseLeave={stopDragging}
-            className={`flex gap-4 overflow-x-auto pb-2 touch-pan-x [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${
-              isDragging ? "cursor-grabbing" : "cursor-grab"
-            }`}
-          >
+         <div
+                ref={sliderRef}
+                onMouseDown={handleMouseDown}
+                onMouseMove={handleMouseMove}
+                onMouseUp={stopDragging}
+                onMouseLeave={stopDragging}
+                onTouchStart={() => setIsPaused(true)}
+                onTouchEnd={() => setIsPaused(false)}
+                onTouchCancel={() => setIsPaused(false)}
+                className={`flex gap-4 overflow-x-auto overflow-y-hidden pb-2
+                    overscroll-x-contain
+                    touch-pan-x touch-pan-y
+                    [scrollbar-width:none]
+                    [&::-webkit-scrollbar]:hidden
+                    ${
+                    isDragging ? "cursor-grabbing" : "cursor-grab"
+                    }`}
+                >
             {refurbishedMobiles.map((phone) => (
               <Link
                 key={phone.id}
