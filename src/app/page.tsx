@@ -1,7 +1,7 @@
 import Image from "next/image";
 import HeroSlider from "./components/HeroSlider";
 import OurServices from "./components/OurServices";
-import RefurbishedMobilesSlider from "./components/RefurbishedMobilesSlider";
+import DealofTheday from "./components/DealofTheday";
 import IphoneCollection from "./components/IphoneCollection";
 import SamsungGalaxyCollection from "./components/SamsungGalaxyCollection";
 import ShopByPrice from "./components/ShopByPrice";
@@ -10,22 +10,26 @@ import ExclusiveStores from "./components/ExclusiveStores";
 import CustomerReviews from "./components/CustomerReviews";
 import HotDeals from "./components/HotDeals";
 import FaqSection from "./components/FaqSection";
+import BrandSlider from "./components/BrandSlider";
 
 
 export default function HomePage() {
   return (
     <>
       <HeroSlider />
+      <BrandSlider />
       <OurServices />
-      <RefurbishedMobilesSlider />
+       <DealofTheday />
        <IphoneCollection />
-       <SamsungGalaxyCollection />
+       
        <ShopByPrice />
+        <HotDeals />
        <WhyChooseBidmax />
        <ExclusiveStores />
        <CustomerReviews />
-       <HotDeals />
+      
        <FaqSection />
+      
     </>
   );
 }

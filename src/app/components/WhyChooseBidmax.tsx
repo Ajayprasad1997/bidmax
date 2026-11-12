@@ -174,7 +174,7 @@ export default function WhyChooseBidmax() {
               </span>
 
               <h3 className="mt-3 text-2xl font-black leading-tight text-white sm:text-3xl">
-                Ready to Find Your Perfect Phone?
+                Ready to Find Your Pre-Owned Perfect Phone?
               </h3>
 
               <p className="mt-3 text-sm leading-6 text-blue-100">

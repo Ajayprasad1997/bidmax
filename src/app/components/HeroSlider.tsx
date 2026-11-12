@@ -73,6 +73,40 @@ const slides: BannerSlide[] = [
       "images/banner1.jpg",
     icon: Tag,
   },
+  {
+    id: 4,
+    title: "Exchange Mobile Offer",
+    subtitle: "Inspect condition, battery health & warranty in person before paying at the store",
+    ctaText: "Browse Pre-Owned",
+    ctaHref: "/buy-phones?condition=second-hand",
+    badgeText: "TESTED PHONES",
+    highlightText: "LOCAL STORES",
+    subBadgeText: "*T&C Applied",
+    bgGradient: "from-[#06172E] via-[#0B3574] to-[#0866FF]",
+    accentColor: "text-[#FFD43B]",
+    buttonBg: "bg-[#FFD43B] hover:bg-[#FCC419]",
+    buttonText: "text-[#06172E]",
+    bgImage:
+      "images/banner4.jpg",
+    icon: Tag,
+  },
+  {
+    id: 5,
+    title: "Dad Mobile Offer",
+    subtitle: "Inspect condition, battery health & warranty in person before paying at the store",
+    ctaText: "Browse Pre-Owned",
+    ctaHref: "/buy-phones?condition=second-hand",
+    badgeText: "TESTED PHONES",
+    highlightText: "LOCAL STORES",
+    subBadgeText: "*T&C Applied",
+    bgGradient: "from-[#06172E] via-[#0B3574] to-[#0866FF]",
+    accentColor: "text-[#FFD43B]",
+    buttonBg: "bg-[#FFD43B] hover:bg-[#FCC419]",
+    buttonText: "text-[#06172E]",
+    bgImage:
+      "images/banner5.jpg",
+    icon: Tag,
+  },
 ];
 
 export default function HeroSlider() {

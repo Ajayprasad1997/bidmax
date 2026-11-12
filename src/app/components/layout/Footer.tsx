@@ -411,7 +411,7 @@ export default async function Footer() {
             <div className="flex items-start gap-4">
 
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white/15 text-white">
-                <MapPinned size={25} />
+                <CreditCard size={25} />
               </div>
 
               <div>
@@ -420,13 +420,11 @@ export default async function Footer() {
                 </span>
 
                 <h3 className="mt-1 text-xl font-extrabold text-white sm:text-2xl">
-                  Find Mobile Stores Near You
+                  Payment & Logistics Options
                 </h3>
 
                 <p className="mt-2 max-w-xl text-xs leading-6 text-blue-100 sm:text-sm">
-                  Discover participating local mobile retailers by
-                  entering your PIN code. Explore available phones,
-                  compare dealer offers and connect directly with stores.
+                  Launch without Cash on Delivery (COD) to mitigate risk, with plans to add it in ~2 months. Integrate third-party APIs for online payments and EMI options.
                 </p>
               </div>
 

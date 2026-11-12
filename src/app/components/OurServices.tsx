@@ -22,7 +22,7 @@ const phoneServices: ServiceCategory[] = [
   },
   {
     id: "second-hand-phones",
-    label: "Second-Hand Phones",
+    label: "Used Phone",
     href: "/buy-phones?condition=second-hand",
     imageUrl:
       "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&w=900&q=85",
@@ -55,20 +55,7 @@ const phoneServices: ServiceCategory[] = [
     imageUrl:
       "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=900&q=85",
   },
-  {
-    id: "iphone-deals",
-    label: "Apple iPhone",
-    href: "/buy-phones?search=iPhone",
-    imageUrl:
-      "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    id: "samsung-galaxy",
-    label: "Samsung Galaxy",
-    href: "/buy-phones?search=Samsung",
-    imageUrl:
-      "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=900&q=85",
-  },
+
   {
     id: "5g-smartphones",
     label: "5G Smartphones",
@@ -77,9 +64,9 @@ const phoneServices: ServiceCategory[] = [
       "https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=900&q=85",
   },
   {
-    id: "flagship-phones",
-    label: "Flagship Phones",
-    href: "/buy-phones?search=Pro",
+    id: "4g-smartphones",
+    label: "4G Smartphones",
+    href: "/buy-phones?search=4G",
     imageUrl:
       "https://images.unsplash.com/photo-1603891128711-11b4b03bb138?auto=format&fit=crop&w=900&q=85",
   },
@@ -92,10 +79,18 @@ const phoneServices: ServiceCategory[] = [
   },
   {
     id: "exchange-upgrade",
-    label: "Phone Exchange",
+    label: "Exchange Phone",
     href: "/sell-phone",
     imageUrl:
       "https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=900&q=85",
+  },
+ 
+  {
+    id: "dad-phones",
+    label: "Dad Phones",
+    href: "/buy-phones?search=Redmi",
+    imageUrl:
+      "https://images.pexels.com/photos/1268513/pexels-photo-1268513.jpeg",
   },
 ];
 

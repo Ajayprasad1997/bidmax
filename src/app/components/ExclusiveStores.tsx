@@ -18,7 +18,7 @@ interface ExclusiveStore {
 const exclusiveStores: ExclusiveStore[] = [
   {
     id: 1,
-    name: "Mobile World",
+    name: "Bidmax Retail One",
     location: "Kolkata, West Bengal",
     pincode: "700001",
     image:
@@ -28,7 +28,7 @@ const exclusiveStores: ExclusiveStore[] = [
   },
   {
     id: 2,
-    name: "Smart Phone Hub",
+    name: "Bidmax Retail Two",
     location: "Barrackpore, West Bengal",
     pincode: "700120",
     image:
@@ -38,7 +38,7 @@ const exclusiveStores: ExclusiveStore[] = [
   },
   {
     id: 3,
-    name: "Digital Mobile Store",
+    name: "Bidmax Retail Three",
     location: "Patna, Bihar",
     pincode: "800001",
     image:
@@ -48,7 +48,7 @@ const exclusiveStores: ExclusiveStore[] = [
   },
   {
     id: 4,
-    name: "The Mobile Gallery",
+    name: "Bidmax Retail Four",
     location: "New Delhi",
     pincode: "110001",
     image:
@@ -136,10 +136,10 @@ const ExclusiveStores = () => {
                   {store.name}
                 </h3>
 
-                <div className="mt-3 flex items-center gap-2 text-sm text-gray-500">
+                {/* <div className="mt-3 flex items-center gap-2 text-sm text-gray-500">
                   <MapPin size={16} className="shrink-0 text-blue-600" />
                   {store.location}
-                </div>
+                </div> */}
 
                 <div className="mt-2 flex items-center justify-between border-t border-gray-100 pt-4">
                   <span className="text-xs font-medium text-gray-400">
@@ -160,7 +160,7 @@ const ExclusiveStores = () => {
         {/* Bottom CTA */}
         <div className="mt-12 rounded-2xl bg-gradient-to-r from-[#172554] to-[#2563eb] px-6 py-8 text-center sm:px-10">
 
-          <h3 className="text-xl font-bold text-white sm:text-2xl">
+          <h3 className="mt-1 text-xl font-extrabold text-white sm:text-2xl">
             Are You a Mobile Phone Retailer?
           </h3>
 

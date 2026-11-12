@@ -65,7 +65,7 @@ const GoogleIcon = ({ size = 14 }: { size?: number }) => (
 ========================= */
 
 const navItems = [
-  { label: "Home", href: "/" },
+  { label: "Search By Brands", href: "/" },
   { label: "Buy Phones", href: "/buy-phones", icon: Smartphone },
   { label: "Sell Phone", href: "/sell-phone", icon: Store },
   { label: "Bid / Auctions", href: "/auctions", icon: Gavel },
@@ -314,64 +314,69 @@ export default function Header() {
           TOP ANNOUNCEMENT MARQUEE
       ========================= */}
 
-      {isVisible && (
-        <div className="relative z-[60] min-h-[36px] w-full overflow-hidden bg-gradient-to-r from-[#06172E] via-[#0755D9] to-[#0866FF] text-white">
+     {isVisible && (
+        <div className="relative z-[60] w-full overflow-hidden bg-gradient-to-r from-[#06172E] via-[#0755D9] to-[#0866FF] text-white">
 
-          {/* MARQUEE CONTENT */}
-          <div className="flex min-h-[36px] items-center overflow-hidden pr-10">
-            <div className="announcement-marquee flex w-max shrink-0 items-center">
+          {/* MARQUEE CONTAINER */}
+          <div className="mx-auto flex min-h-[42px] w-full max-w-7xl items-center px-3 sm:px-6 lg:px-8">
 
-              {/* FIRST GROUP */}
-              <div className="flex shrink-0 items-center whitespace-nowrap px-8">
-                <span className="text-[11px] font-bold tracking-wide sm:text-xs">
-                  BUY • SELL • BID
-                </span>
+            {/* MARQUEE CONTENT */}
+            <div className="min-w-0 flex-1 overflow-hidden">
+              <div className="announcement-marquee flex w-max items-center">
 
-                <span className="mx-3 text-white/50">|</span>
+                {/* FIRST GROUP */}
+                <div className="flex shrink-0 items-center whitespace-nowrap px-6">
+                  <span className="text-[11px] font-bold tracking-wide sm:text-xs">
+                    BUY • SELL • BID
+                  </span>
 
-                <span className="text-[11px] font-medium tracking-wide sm:text-xs">
-                  Find the best mobile deals from trusted local retailers.
-                </span>
+                  <span className="mx-3 text-white/50">|</span>
 
-                <span className="ml-3 inline-flex items-center gap-1 rounded-full bg-yellow-400 px-2.5 py-1 text-[9px] font-extrabold uppercase tracking-wide text-[#06172E] sm:text-[10px]">
-                  <Tag size={11} />
-                  Special Offers
-                </span>
+                  <span className="text-[11px] font-medium tracking-wide sm:text-xs">
+                    Find the best mobile deals from trusted local retailers.
+                  </span>
+
+                  <span className="ml-3 inline-flex items-center gap-1 rounded-full bg-yellow-400 px-2.5 py-1 text-[9px] font-extrabold uppercase tracking-wide text-[#06172E] sm:text-[10px]">
+                    <Tag size={11} />
+                    Special Offers
+                  </span>
+                </div>
+
+                {/* DUPLICATE GROUP */}
+                <div
+                  aria-hidden="true"
+                  className="flex shrink-0 items-center whitespace-nowrap px-6"
+                >
+                  <span className="text-[11px] font-bold tracking-wide sm:text-xs">
+                    BUY • SELL • BID
+                  </span>
+
+                  <span className="mx-3 text-white/50">|</span>
+
+                  <span className="text-[11px] font-medium tracking-wide sm:text-xs">
+                    Find the best mobile deals from trusted local retailers.
+                  </span>
+
+                  <span className="ml-3 inline-flex items-center gap-1 rounded-full bg-yellow-400 px-2.5 py-1 text-[9px] font-extrabold uppercase tracking-wide text-[#06172E] sm:text-[10px]">
+                    <Tag size={11} />
+                    Special Offers
+                  </span>
+                </div>
+
               </div>
-
-              {/* DUPLICATE GROUP FOR SEAMLESS LOOP */}
-              <div
-                aria-hidden="true"
-                className="flex shrink-0 items-center whitespace-nowrap px-8"
-              >
-                <span className="text-[11px] font-bold tracking-wide sm:text-xs">
-                  BUY • SELL • BID
-                </span>
-
-                <span className="mx-3 text-white/50">|</span>
-
-                <span className="text-[11px] font-medium tracking-wide sm:text-xs">
-                  Find the best mobile deals from trusted local retailers.
-                </span>
-
-                <span className="ml-3 inline-flex items-center gap-1 rounded-full bg-yellow-400 px-2.5 py-1 text-[9px] font-extrabold uppercase tracking-wide text-[#06172E] sm:text-[10px]">
-                  <Tag size={11} />
-                  Special Offers
-                </span>
-              </div>
-
             </div>
-          </div>
 
-          {/* CLOSE BUTTON */}
-          <button
-            type="button"
-            onClick={() => setIsVisible(false)}
-            aria-label="Close announcement bar"
-            className="absolute right-1.5 top-1/2 z-20 flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-full text-white transition-all duration-200 hover:bg-white/20 sm:right-3"
-          >
-            <X size={16} strokeWidth={2} />
-          </button>
+            {/* CLOSE BUTTON */}
+            <button
+              type="button"
+              onClick={() => setIsVisible(false)}
+              aria-label="Close announcement bar"
+              className="ml-2 flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-white transition-all duration-200 hover:bg-white/20"
+            >
+              <X size={16} strokeWidth={2} />
+            </button>
+
+          </div>
 
           {/* MARQUEE ANIMATION */}
           <style jsx>{`

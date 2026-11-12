@@ -2,7 +2,7 @@
 
 import React, { useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, ChevronLeft, ChevronRight, MapPinned } from "lucide-react";
 
 interface PriceTier {
   id: string;
@@ -197,6 +197,45 @@ export default function ShopByPrice() {
           >
             <ChevronRight size={18} strokeWidth={2.2} />
           </button>
+        </div>
+          {/* 3. LOCAL RETAILER COVERAGE */}
+        <div className="mt-12 overflow-hidden rounded-3xl bg-gradient-to-r from-[#102C59] via-[#164A9A] to-[#0866FF] p-6 sm:p-8">
+
+          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-center">
+
+            <div className="flex items-start gap-4">
+
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white/15 text-white">
+                <MapPinned size={25} />
+              </div>
+
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-blue-200">
+                  Local Retailer Network
+                </span>
+
+                <h3 className="mt-1 text-xl font-extrabold text-white sm:text-2xl">
+                  Find Mobile Stores Near You
+                </h3>
+
+                <p className="mt-2 max-w-xl text-xs leading-6 text-blue-100 sm:text-sm">
+                  Discover participating local mobile retailers by
+                  entering your PIN code. Explore available phones,
+                  compare dealer offers and connect directly with stores.
+                </p>
+              </div>
+
+            </div>
+
+            <Link
+              href="/dealers"
+              className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-extrabold text-[#164A9A] transition-all duration-300 hover:-translate-y-1 hover:bg-blue-50"
+            >
+              Find Local Retailers
+              <ArrowUpRight size={18} />
+            </Link>
+
+          </div>
         </div>
       </div>
     </section>

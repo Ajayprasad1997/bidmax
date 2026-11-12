@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
+import { ArrowUpRight, ChevronRight } from "lucide-react";
 
 interface DealCard {
   id: string;
@@ -28,7 +28,7 @@ const hotDealsCards: DealCard[] = [
   },
   {
     id: "second-hand-deals",
-    lines: ["Second-Hand", "Phone Deals"],
+    lines: ["Pre-Owned", "Phone Deals"],
     href: "/buy-phones?condition=second-hand",
     bgColor: "bg-[#C7EFE4]",
     circleBg: "bg-[#ADE2D3]",
@@ -130,7 +130,32 @@ export default function HotDeals() {
             </Link>
           ))}
         </div>
+         {/* Bottom CTA */}
+        
+       <div className="mt-12 rounded-2xl bg-gradient-to-r from-[#172554] to-[#2563eb] px-6 py-8 text-center sm:px-10">
+          <h3 className="mt-1 text-xl font-extrabold text-white sm:text-2xl">
+            Looking for a Specific Smartphone Model?
+          </h3>
+
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-blue-100">
+            Can't find the smartphone you're looking for? Send your demand on
+            BidMax and let us help you connect with the right seller. All
+            pre-owned phone sales are securely facilitated through BidMax,
+            ensuring a trusted transaction with a transparent 7.5% commission.
+          </p>
+
+          <Link
+            href="/send-demand"
+            className="mt-6 inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-white px-7 py-4 text-sm font-extrabold text-[#0866FF] shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-blue-50"
+          >
+            Send Your Demand
+            <ArrowUpRight size={17} />
+          </Link>
+
+        </div>
+
       </div>
+      
     </section>
   );
 }

@@ -336,7 +336,7 @@ const CustomerReviews = () => {
         <div className="mt-14 flex flex-col items-center justify-between gap-6 rounded-3xl bg-gradient-to-r from-[#172554] via-[#1e40af] to-[#2563eb] p-8 text-center sm:flex-row sm:px-12 sm:text-left">
 
           <div>
-            <h3 className="text-xl font-bold text-white sm:text-2xl">
+            <h3 className="mt-1 text-xl font-extrabold text-white sm:text-2xl">
               Your Next Smartphone Starts Here!
             </h3>
 

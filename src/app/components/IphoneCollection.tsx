@@ -39,8 +39,8 @@ const iphoneCollection: Iphone[] = [
     href: "/buy-phones?search=iPhone+16+Pro+Max",
   },
   {
-    id: "iphone-16-pro",
-    title: "Apple iPhone 16 Pro (128GB)",
+    id: "Oppo-Find-X6-Pro",
+    title: "Oppo Find X6 Pro (256GB)",
     imageUrl:
       "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&auto=format&fit=crop&q=80",
     badge: "BIDMAX VERIFIED",
@@ -52,8 +52,8 @@ const iphoneCollection: Iphone[] = [
     href: "/buy-phones?search=iPhone+16+Pro",
   },
   {
-    id: "iphone-15-pro-max",
-    title: "Apple iPhone 15 Pro Max (256GB)",
+    id: "relmi-16",
+    title: "Realmi 16 (256GB)",
     imageUrl:
       "https://images.unsplash.com/photo-1605236453806-6ff36851218e?w=600&auto=format&fit=crop&q=80",
     badge: "BIDMAX SELECT",
@@ -91,8 +91,8 @@ const iphoneCollection: Iphone[] = [
     href: "/buy-phones?search=iPhone+14+Pro",
   },
   {
-    id: "iphone-14",
-    title: "Apple iPhone 14 (128GB)",
+    id: "vivo-x90-pro",
+    title: "Vivo X90 Pro (256GB)",
     imageUrl:
       "https://images.unsplash.com/photo-1603891128711-11b4b03bb138?w=600&auto=format&fit=crop&q=80",
     badge: "BIDMAX SELECT",
@@ -132,15 +132,15 @@ export default function IphoneCollection() {
     }
   }, []);
 
-  useEffect(() => {
-    if (isPaused) return;
+  // useEffect(() => {
+  //   if (isPaused) return;
 
-    const interval = setInterval(() => {
-      slideBy("right");
-    }, 3500);
+  //   const interval = setInterval(() => {
+  //     slideBy("right");
+  //   }, 3500);
 
-    return () => clearInterval(interval);
-  }, [isPaused, slideBy]);
+  //   return () => clearInterval(interval);
+  // }, [isPaused, slideBy]);
 
   return (
     <section className="w-full bg-white py-8 sm:py-10">
@@ -151,12 +151,13 @@ export default function IphoneCollection() {
             <div className="mb-1 flex items-center gap-2">
               <Smartphone size={18} className="text-[#0866FF]" />
               <span className="text-xs font-bold uppercase tracking-wider text-[#0866FF]">
-                Premium Collection
+                Premium Collection 
               </span>
+              <span className="text-xs">(The Bidmax Commitment to Selling Phones "in Broken Condition," Not Repaired Ones.)</span>
             </div>
 
             <h2 className="text-xl font-extrabold tracking-tight text-[#06172E] sm:text-2xl">
-              Explore iPhone Collection
+              Used Phone
             </h2>
           </div>
 
@@ -164,7 +165,7 @@ export default function IphoneCollection() {
             href="/buy-phones?search=iPhone"
             className="text-xs font-bold text-[#0866FF] hover:underline sm:text-sm"
           >
-            View All
+            View All &rarr;
           </Link>
         </div>
 
@@ -255,7 +256,7 @@ export default function IphoneCollection() {
                 {/* Footer */}
                 <div className="mt-3 border-t border-slate-100 pt-3">
                   <span className="text-[11px] font-semibold text-[#0866FF]">
-                    Explore iPhone Details →
+                    Explore Phone Details →
                   </span>
                 </div>
               </Link>

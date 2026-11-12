@@ -167,15 +167,15 @@ export default function RefurbishedMobilesSlider() {
   }, []);
 
   // Auto Slide
-  useEffect(() => {
-    if (isPaused || isDragging) return;
+  // useEffect(() => {
+  //   if (isPaused || isDragging) return;
 
-    const interval = setInterval(() => {
-      slideBy("right");
-    }, 3500);
+  //   const interval = setInterval(() => {
+  //     slideBy("right");
+  //   }, 3500);
 
-    return () => clearInterval(interval);
-  }, [isPaused, isDragging, slideBy]);
+  //   return () => clearInterval(interval);
+  // }, [isPaused, isDragging, slideBy]);
 
   // Mouse Drag Start
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -228,14 +228,14 @@ export default function RefurbishedMobilesSlider() {
         {/* Section Header */}
         <div className="mb-5 flex items-center justify-between">
           <h2 className="text-xl font-extrabold tracking-tight text-[#06172E] sm:text-2xl">
-            Buy Refurbished Mobiles
+           Deal of the Day
           </h2>
 
           <Link
             href="/buy-phones?condition=second-hand"
             className="text-xs font-bold text-[#0866FF] hover:underline sm:text-sm"
           >
-            View All
+            View All &rarr;
           </Link>
         </div>
 
