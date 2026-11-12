@@ -30,7 +30,7 @@ interface RefurbishedPhone {
 const refurbishedMobiles: RefurbishedPhone[] = [
   {
     id: "iphone-15-pro-refurb",
-    title: "Apple iPhone 15 Pro - Refurbished",
+    title: "Apple iPhone 15 Pro - Used Phone",
     imageUrl:
       "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=600&auto=format&fit=crop&q=80",
     badgeLabel: "BIDMAX VERIFIED",
@@ -45,7 +45,7 @@ const refurbishedMobiles: RefurbishedPhone[] = [
   },
   {
     id: "galaxy-s24-ultra-refurb",
-    title: "Samsung Galaxy S24 Ultra 5G - Refurbished",
+    title: "Samsung Galaxy S24 Ultra 5G - Used Phone",
     imageUrl:
       "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&auto=format&fit=crop&q=80",
     badgeLabel: "BIDMAX VERIFIED",
@@ -60,7 +60,7 @@ const refurbishedMobiles: RefurbishedPhone[] = [
   },
   {
     id: "oneplus-12-5g-refurb",
-    title: "OnePlus 12 5G (16GB RAM) - Refurbished",
+    title: "OnePlus 12 5G (16GB RAM) - Used Phone",
     imageUrl:
       "https://images.unsplash.com/photo-1605236453806-6ff36851218e?w=600&auto=format&fit=crop&q=80",
     badgeLabel: "BIDMAX VERIFIED",
@@ -74,7 +74,7 @@ const refurbishedMobiles: RefurbishedPhone[] = [
   },
   {
     id: "pixel-8-pro-refurb",
-    title: "Google Pixel 8 Pro 5G - Refurbished",
+    title: "Google Pixel 8 Pro 5G - Used Phone",
     imageUrl:
       "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600&auto=format&fit=crop&q=80",
     badgeLabel: "BIDMAX SELECT",
@@ -89,7 +89,7 @@ const refurbishedMobiles: RefurbishedPhone[] = [
   },
   {
     id: "galaxy-z-flip6-refurb",
-    title: "Samsung Galaxy Z Flip6 5G - Refurbished",
+    title: "Samsung Galaxy Z Flip6 5G - Used Phone",
     imageUrl:
       "https://images.unsplash.com/photo-1580910051074-3eb694886505?w=600&auto=format&fit=crop&q=80",
     badgeLabel: "BIDMAX VERIFIED",
@@ -103,7 +103,7 @@ const refurbishedMobiles: RefurbishedPhone[] = [
   },
   {
     id: "iphone-14-refurb",
-    title: "Apple iPhone 14 (128 GB) - Refurbished",
+    title: "Apple iPhone 14 (128 GB) - Used Phone",
     imageUrl:
       "https://images.unsplash.com/photo-1603891128711-11b4b03bb138?w=600&auto=format&fit=crop&q=80",
     badgeLabel: "BIDMAX VERIFIED",
@@ -287,13 +287,13 @@ export default function RefurbishedMobilesSlider() {
                 <div>
                   {/* Verified Badge */}
                   <div className="mb-2 flex items-center justify-between">
-                    <span className="inline-flex items-center gap-1 rounded-md bg-[#06172E] px-2 py-0.5 text-[10px] font-extrabold tracking-wide text-white uppercase">
+                    {/* <span className="inline-flex items-center gap-1 rounded-md bg-[#06172E] px-2 py-0.5 text-[10px] font-extrabold tracking-wide text-white uppercase">
                       <ShieldCheck
                         size={12}
                         className="text-sky-400"
                       />
                       {phone.badgeLabel}
-                    </span>
+                    </span> */}
                   </div>
 
                   {/* Phone Image */}

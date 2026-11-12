@@ -119,182 +119,27 @@ function ServiceCard({ service }: { service: ServiceCategory }) {
 }
 
 export default function OurServices() {
-  const trackRef = useRef<HTMLDivElement>(null);
-  const positionRef = useRef(0);
-  const draggingRef = useRef(false);
-  const lastPointerXRef = useRef(0);
-  const animationFrameRef = useRef<number | null>(null);
-  const halfWidthRef = useRef(0);
-
-  const [isDragging, setIsDragging] = useState(false);
-
-  // Keep the track moving infinitely from right to left.
-  useEffect(() => {
-    const track = trackRef.current;
-    if (!track) return;
-
-    const updateWidth = () => {
-      halfWidthRef.current = track.scrollWidth / 2;
-    };
-
-    updateWidth();
-
-    const resizeObserver = new ResizeObserver(updateWidth);
-    resizeObserver.observe(track);
-
-    const animate = () => {
-      const halfWidth = halfWidthRef.current;
-
-      if (!draggingRef.current && halfWidth > 0) {
-        positionRef.current -= 0.5;
-
-        if (positionRef.current <= -halfWidth) {
-          positionRef.current += halfWidth;
-        }
-
-        if (positionRef.current > 0) {
-          positionRef.current -= halfWidth;
-        }
-      }
-
-      track.style.transform = `translate3d(${positionRef.current}px, 0, 0)`;
-
-      animationFrameRef.current = requestAnimationFrame(animate);
-    };
-
-    animationFrameRef.current = requestAnimationFrame(animate);
-
-    return () => {
-      if (animationFrameRef.current !== null) {
-        cancelAnimationFrame(animationFrameRef.current);
-      }
-      resizeObserver.disconnect();
-    };
-  }, []);
-
-  // Mouse and touch drag support.
-  const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
-    draggingRef.current = true;
-    setIsDragging(true);
-    lastPointerXRef.current = e.clientX;
-    e.currentTarget.setPointerCapture(e.pointerId);
-  };
-
-  const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
-    if (!draggingRef.current) return;
-
-    const delta = e.clientX - lastPointerXRef.current;
-    lastPointerXRef.current = e.clientX;
-
-    positionRef.current += delta;
-
-    const halfWidth = halfWidthRef.current;
-
-    if (halfWidth > 0) {
-      if (positionRef.current <= -halfWidth) {
-        positionRef.current += halfWidth;
-      }
-
-      if (positionRef.current > 0) {
-        positionRef.current -= halfWidth;
-      }
-    }
-
-    if (trackRef.current) {
-      trackRef.current.style.transform = `translate3d(${positionRef.current}px, 0, 0)`;
-    }
-  };
-
-  const handlePointerUp = () => {
-    draggingRef.current = false;
-    setIsDragging(false);
-  };
-
-  // Move manually using the arrow buttons.
-  const moveSlider = (direction: "left" | "right") => {
-    const halfWidth = halfWidthRef.current;
-    if (!halfWidth) return;
-
-    positionRef.current += direction === "left" ? -200 : 200;
-
-    if (positionRef.current <= -halfWidth) {
-      positionRef.current += halfWidth;
-    }
-
-    if (positionRef.current > 0) {
-      positionRef.current -= halfWidth;
-    }
-
-    if (trackRef.current) {
-      trackRef.current.style.transform = `translate3d(${positionRef.current}px, 0, 0)`;
-    }
-  };
-
   return (
-    <section className="w-full overflow-hidden bg-white py-8 sm:py-10">
+    <section className="w-full bg-white py-8 sm:py-10">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
-        <div className="mb-6 flex items-center justify-between">
+
+        {/* Section Header */}
+        <div className="mb-6">
           <h2 className="text-xl font-extrabold tracking-tight text-[#06172E] sm:text-2xl">
             Our Services
           </h2>
-
-          {/* Mobile slider controls */}
-          <div className="flex gap-2 md:hidden">
-            <button
-              type="button"
-              onClick={() => moveSlider("right")}
-              aria-label="Move services left"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 text-[#06172E] transition hover:bg-blue-50"
-            >
-              <ChevronLeft size={18} />
-            </button>
-
-            <button
-              type="button"
-              onClick={() => moveSlider("left")}
-              aria-label="Move services right"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 text-[#06172E] transition hover:bg-blue-50"
-            >
-              <ChevronRight size={18} />
-            </button>
-          </div>
         </div>
 
-        {/* Mobile: Infinite draggable slider */}
-        <div className="relative overflow-hidden md:hidden">
-          <div
-            ref={trackRef}
-            onPointerDown={handlePointerDown}
-            onPointerMove={handlePointerMove}
-            onPointerUp={handlePointerUp}
-            onPointerCancel={handlePointerUp}
-            onLostPointerCapture={handlePointerUp}
-            className={`flex w-max gap-3 ${
-              isDragging ? "cursor-grabbing" : "cursor-grab"
-            }`}
-            style={{
-              touchAction: "pan-y",
-              userSelect: "none",
-              willChange: "transform",
-            }}
-          >
-            {[...phoneServices, ...phoneServices].map((service, index) => (
-              <div
-                key={`${service.id}-${index}`}
-                className="w-[105px] shrink-0"
-              >
-                <ServiceCard service={service} />
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Desktop: Original grid layout */}
-        <div className="hidden grid-cols-4 gap-x-3 gap-y-6 sm:grid md:grid-cols-6 lg:grid-cols-8">
+        {/* Responsive Services Grid */}
+        <div className="grid grid-cols-3 gap-x-3 gap-y-6 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8">
           {phoneServices.map((service) => (
-            <ServiceCard key={service.id} service={service} />
+            <ServiceCard
+              key={service.id}
+              service={service}
+            />
           ))}
         </div>
+
       </div>
     </section>
   );

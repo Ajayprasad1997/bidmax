@@ -59,6 +59,17 @@ const hotDealsCards: DealCard[] = [
     secondaryPhoneImg:
       "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=600&q=85",
   },
+  {
+    id: "exchange-phone",
+    lines: ["Exchange", "Your Phone"],
+    href: "/exchange-phone",
+    bgColor: "bg-[#D7E8FA]",
+    circleBg: "bg-[#BBD7F3]",
+    primaryPhoneImg:
+      "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=600&q=85",
+    secondaryPhoneImg:
+      "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&q=85",
+  },
 ];
 
 export default function HotDeals() {
@@ -76,7 +87,7 @@ export default function HotDeals() {
         </div>
 
         {/* 4-Column Pastel Promo Cards Grid */}
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {hotDealsCards.map((card) => (
             <Link
               key={card.id}

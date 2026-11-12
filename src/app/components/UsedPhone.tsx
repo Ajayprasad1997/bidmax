@@ -197,12 +197,12 @@ export default function IphoneCollection() {
                 className="group flex w-[248px] shrink-0 flex-col rounded-2xl border border-slate-200 bg-white p-3.5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#0866FF] hover:shadow-lg sm:w-[258px]"
               >
                 {/* Badge */}
-                <div className="mb-2 flex items-center justify-between">
+                {/* <div className="mb-2 flex items-center justify-between">
                   <span className="inline-flex items-center gap-1 rounded-md bg-[#06172E] px-2 py-1 text-[10px] font-extrabold tracking-wide text-white">
                     <ShieldCheck size={12} className="text-sky-400" />
                     {phone.badge}
                   </span>
-                </div>
+                </div> */}
 
                 {/* Product Image */}
                 <div className="my-2 flex h-44 w-full items-center justify-center overflow-hidden rounded-xl bg-slate-50 p-3">

@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useRef, useState, useEffect } from 'react';
@@ -11,6 +12,7 @@ interface Brand {
   logoText?: string;
   icon?: React.ReactNode;
   subText?: string;
+  image: string;
 }
 
 const AppleIcon = ({ size = 26 }: { size?: number }) => (
@@ -26,180 +28,397 @@ const AppleIcon = ({ size = 26 }: { size?: number }) => (
 );
 
 const BRANDS: Brand[] = [
-  { name: 'APPLE', slug: 'apple', bgColor: 'bg-black', textColor: 'text-white', icon: <AppleIcon size={26} /> },
-  { name: 'SAMSUNG', slug: 'samsung', bgColor: 'bg-[#1428A0]', textColor: 'text-white', logoText: 'SAMSUNG' },
-  { name: 'ONEPLUS', slug: 'oneplus', bgColor: 'bg-[#F5010C]', textColor: 'text-white', logoText: '1+' },
-  { name: 'GOOGLE', slug: 'google', bgColor: 'bg-white border border-gray-200', textColor: 'text-[#4285F4]', logoText: 'G' },
-  { name: 'XIAOMI', slug: 'xiaomi', bgColor: 'bg-[#FF6900]', textColor: 'text-white', logoText: 'mi' },
-  { name: 'REDMI', slug: 'redmi', bgColor: 'bg-[#FF6900]', textColor: 'text-white', logoText: 'Redmi' },
-  { name: 'POCO', slug: 'poco', bgColor: 'bg-[#FFD400]', textColor: 'text-black', logoText: 'POCO' },
-  { name: 'VIVO', slug: 'vivo', bgColor: 'bg-[#0066CC]', textColor: 'text-white', logoText: 'vivo' },
-  { name: 'IQOO', slug: 'iqoo', bgColor: 'bg-black', textColor: 'text-[#FFC915]', logoText: 'iQOO' },
-  { name: 'OPPO', slug: 'oppo', bgColor: 'bg-[#008250]', textColor: 'text-white', logoText: 'oppo' },
-  { name: 'REALME', slug: 'realme', bgColor: 'bg-[#FFC915]', textColor: 'text-black', logoText: 'realme' },
-  { name: 'MOTOROLA', slug: 'motorola', bgColor: 'bg-black', textColor: 'text-white', logoText: 'M' },
-  { name: 'NOTHING', slug: 'nothing', bgColor: 'bg-black', textColor: 'text-white', logoText: 'NOTHING' },
-  { name: 'HONOR', slug: 'honor', bgColor: 'bg-[#0099E5]', textColor: 'text-white', logoText: 'honor' },
-  { name: 'HMD', slug: 'hmd', bgColor: 'bg-black', textColor: 'text-white', logoText: 'HMD' },
-  { name: 'NOKIA', slug: 'nokia', bgColor: 'bg-[#005AFF]', textColor: 'text-white', logoText: 'NOKIA' },
-  { name: 'INFINIX', slug: 'infinix', bgColor: 'bg-[#00A650]', textColor: 'text-white', logoText: 'Infinix' },
-  { name: 'TECNO', slug: 'tecno', bgColor: 'bg-[#0033A0]', textColor: 'text-white', logoText: 'TECNO' },
-  { name: 'ITEL', slug: 'itel', bgColor: 'bg-white border border-gray-200', textColor: 'text-[#E60012]', logoText: 'itel' },
-  { name: 'LAVA', slug: 'lava', bgColor: 'bg-[#E91E63]', textColor: 'text-white', logoText: 'LAVA' },
-  { name: 'MICROMAX', slug: 'micromax', bgColor: 'bg-[#FF5722]', textColor: 'text-white', logoText: 'Micromax' },
-  { name: 'LENOVO', slug: 'lenovo', bgColor: 'bg-[#4A154B]', textColor: 'text-white', logoText: 'Lenovo' },
-  { name: 'ASUS', slug: 'asus', bgColor: 'bg-[#00539B]', textColor: 'text-white', logoText: 'ASUS' },
-  { name: 'SONY', slug: 'sony', bgColor: 'bg-black', textColor: 'text-white', logoText: 'SONY' },
-  { name: 'LG', slug: 'lg', bgColor: 'bg-white border border-gray-200', textColor: 'text-[#A50034]', logoText: 'LG' },
-  { name: 'AI+', slug: 'ai-plus', bgColor: 'bg-black', textColor: 'text-white', logoText: 'Ai+', subText: 'Smartphone' },
+  {
+    name: 'APPLE',
+    slug: 'apple',
+    bgColor: 'bg-[#F5010C]',
+    textColor: 'text-white',
+    icon: <AppleIcon size={22} />,
+    image: 'https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-16-pro-max.jpg',
+  },
+  {
+    name: 'SAMSUNG',
+    slug: 'samsung',
+    bgColor: 'bg-[#a795f8]',
+    textColor: 'text-white',
+    logoText: 'SAMSUNG',
+    image: 'https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-a57.jpg',
+  },
+  {
+    name: 'ONEPLUS',
+    slug: 'oneplus',
+    bgColor: 'bg-[#F5010C]',
+    textColor: 'text-white',
+    logoText: '1+',
+    image: 'https://fdn2.gsmarena.com/vv/bigpic/oneplus-13.jpg',
+  },
+  {
+    name: 'GOOGLE',
+    slug: 'google',
+    bgColor: 'bg-[#fc7073]',
+    textColor: 'text-[#000]',
+    logoText: 'G',
+    image: 'https://fdn2.gsmarena.com/vv/bigpic/google-pixel-10a.jpg',
+  },
+  {
+    name: 'XIAOMI',
+    slug: 'xiaomi',
+    bgColor: 'bg-[#FF6900]',
+    textColor: 'text-white',
+    logoText: 'mi',
+    image: 'https://fdn2.gsmarena.com/vv/bigpic/xiaomi-15.jpg',
+  },
+  {
+    name: 'REDMI',
+    slug: 'redmi',
+    bgColor: 'bg-[#FF6900]',
+    textColor: 'text-white',
+    logoText: 'Redmi',
+    image: 'https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-14-pro-plus-5g.jpg',
+  },
+  {
+    name: 'POCO',
+    slug: 'poco',
+    bgColor: 'bg-[#FFD400]',
+    textColor: 'text-black',
+    logoText: 'POCO',
+    image: 'https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-x7-pro.jpg',
+  },
+  {
+    name: 'VIVO',
+    slug: 'vivo',
+    bgColor: 'bg-[#0066CC]',
+    textColor: 'text-white',
+    logoText: 'vivo',
+    image: 'https://fdn2.gsmarena.com/vv/bigpic/vivo-x200-pro.jpg',
+  },
+  {
+    name: 'IQOO',
+    slug: 'iqoo',
+    bgColor: 'bg-[#fb9dbc]',
+    textColor: 'text-[#000]',
+    logoText: 'iQOO',
+    image: 'https://fdn2.gsmarena.com/vv/bigpic/vivo-v60-lite.jpg',
+  },
+  {
+    name: 'OPPO',
+    slug: 'oppo',
+    bgColor: 'bg-[#008250]',
+    textColor: 'text-white',
+    logoText: 'oppo',
+    image: 'https://fdn2.gsmarena.com/vv/bigpic/oppo-find-x8-pro.jpg',
+  },
+  {
+    name: 'REALME',
+    slug: 'realme',
+    bgColor: 'bg-[#FFC915]',
+    textColor: 'text-black',
+    logoText: 'realme',
+    image: 'https://fdn2.gsmarena.com/vv/bigpic/realme-gt7-pro.jpg',
+  },
+  {
+    name: 'MOTOROLA',
+    slug: 'motorola',
+    bgColor: 'bg-[#b6b69b]',
+    textColor: 'text-white',
+    logoText: 'M',
+    image: 'https://fdn2.gsmarena.com/vv/bigpic/motorola-signature-27-new.jpg',
+  },
+  {
+    name: 'NOTHING',
+    slug: 'nothing',
+    bgColor: 'bg-[#FFC915]',
+    textColor: 'text-white',
+    logoText: 'NOTHING',
+    image: 'https://fdn2.gsmarena.com/vv/bigpic/nothing-phone-4a-pro.jpg',
+  },
+  {
+    name: 'HONOR',
+    slug: 'honor',
+    bgColor: 'bg-[#0099E5]',
+    textColor: 'text-white',
+    logoText: 'honor',
+    image: 'https://fdn2.gsmarena.com/vv/bigpic/honor-magic7-pro.jpg',
+  },
+  {
+    name: 'HMD',
+    slug: 'hmd',
+    bgColor: 'bg-[#d89eb7]',
+    textColor: 'text-white',
+    logoText: 'HMD',
+    image: 'https://fdn2.gsmarena.com/vv/bigpic/hmd-skyline.jpg',
+  },
+  {
+    name: 'NOKIA',
+    slug: 'nokia',
+    bgColor: 'bg-[#005AFF]',
+    textColor: 'text-white',
+    logoText: 'NOKIA',
+    image: 'https://fdn2.gsmarena.com/vv/bigpic/nokia-x30-5g.jpg',
+  },
+  {
+    name: 'INFINIX',
+    slug: 'infinix',
+    bgColor: 'bg-[#00A650]',
+    textColor: 'text-white',
+    logoText: 'Infinix',
+    image: 'https://fdn2.gsmarena.com/vv/bigpic/infinix-note60-pro.jpg',
+  },
+  {
+    name: 'TECNO',
+    slug: 'tecno',
+    bgColor: 'bg-[#0033A0]',
+    textColor: 'text-white',
+    logoText: 'TECNO',
+    image: 'https://fdn2.gsmarena.com/vv/bigpic/tecno-camon-40-pro-5g.jpg',
+  },
+  {
+    name: 'ITEL',
+    slug: 'itel',
+    bgColor: 'bg-[#af9893]',
+    textColor: 'text-[#fff]',
+    logoText: 'itel',
+    image: 'https://fdn2.gsmarena.com/vv/bigpic/itel-rs4.jpg',
+  },
+  {
+    name: 'LAVA',
+    slug: 'lava',
+    bgColor: 'bg-[#fc984e]',
+    textColor: 'text-white',
+    logoText: 'LAVA',
+    image: 'https://fdn2.gsmarena.com/vv/bigpic/lava-agni4.jpg',
+  },
+  {
+    name: 'MICROMAX',
+    slug: 'micromax',
+    bgColor: 'bg-[#f69575]',
+    textColor: 'text-white',
+    logoText: 'Micromax',
+    image: 'https://fdn2.gsmarena.com/vv/bigpic/micromax-in-2c.jpg',
+  },
+  {
+    name: 'LENOVO',
+    slug: 'lenovo',
+    bgColor: 'bg-[#4A154B]',
+    textColor: 'text-white',
+    logoText: 'Lenovo',
+    image: 'https://fdn2.gsmarena.com/vv/bigpic/lenovo-legion-y70.jpg',
+  },
+  {
+    name: 'ASUS',
+    slug: 'asus',
+    bgColor: 'bg-[#00539B]',
+    textColor: 'text-white',
+    logoText: 'ASUS',
+    image: 'https://fdn2.gsmarena.com/vv/bigpic/asus-zenfone-12-ultra.jpg',
+  },
+  {
+    name: 'SONY',
+    slug: 'sony',
+    bgColor: 'bg-[#a9c3c6]',
+    textColor: 'text-white',
+    logoText: 'SONY',
+    image: 'https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-1-vi.jpg',
+  },
+  {
+    name: 'LG',
+    slug: 'lg',
+    bgColor: 'bg-[#ee955b]',
+    textColor: 'text-[#A50034]',
+    logoText: 'LG',
+    image: 'https://fdn2.gsmarena.com/vv/bigpic/lg-velvet-.jpg',
+  },
+  {
+    name: 'AI+',
+    slug: 'ai-plus',
+    bgColor: 'bg-[#f7d852]',
+    textColor: 'text-white',
+    logoText: 'Ai+',
+    subText: 'Smartphone',
+    image: 'https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-a1-plus-new.jpg',
+  },
 ];
 
 export default function BrandSlider() {
   const sliderRef = useRef<HTMLDivElement>(null);
+
   const [isHovered, setIsHovered] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
-  const [hasDragged, setHasDragged] = useState(false);
 
-  // Duplicate list to create seamless infinite loop
+  const startX = useRef(0);
+  const scrollStart = useRef(0);
+  const hasDragged = useRef(false);
+
   const infiniteBrands = [...BRANDS, ...BRANDS, ...BRANDS];
+// Auto Slide One Card Every 3 Seconds
+useEffect(() => {
+  const slider = sliderRef.current;
+  if (!slider) return;
 
-  // Auto-scroll loop using requestAnimationFrame
-  useEffect(() => {
-    const slider = sliderRef.current;
-    if (!slider) return;
+  const interval = setInterval(() => {
+    if (isHovered || isDragging) return;
 
-    let animationFrameId: number;
-    const speed = 0.8; // Adjust scrolling speed here
+    const cards = slider.children;
 
-    const step = () => {
-      if (!isHovered && !isDragging && slider) {
-        slider.scrollLeft += speed;
+    if (!cards.length) return;
 
-        // Reset scroll position seamlessly at the halfway point
-        const singleSetWidth = slider.scrollWidth / 3;
-        if (slider.scrollLeft >= singleSetWidth * 2) {
-          slider.scrollLeft -= singleSetWidth;
-        } else if (slider.scrollLeft <= 0) {
-          slider.scrollLeft += singleSetWidth;
-        }
-      }
-      animationFrameId = requestAnimationFrame(step);
-    };
+    const currentScroll = slider.scrollLeft;
+    const maxScroll = slider.scrollWidth - slider.clientWidth;
 
-    animationFrameId = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(animationFrameId);
-  }, [isHovered, isDragging]);
+    let nextCard = Array.from(cards).find((card) => {
+      return (card as HTMLElement).offsetLeft > currentScroll + 10;
+    }) as HTMLElement | undefined;
 
-  // Mouse Drag Handlers
-  const handleMouseDown = (e: React.MouseEvent) => {
-    const slider = sliderRef.current;
-    if (!slider) return;
-    setIsDragging(true);
-    setHasDragged(false);
-    setStartX(e.pageX - slider.offsetLeft);
-    setScrollLeft(slider.scrollLeft);
-  };
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging || !sliderRef.current) return;
-    e.preventDefault();
-    const x = e.pageX - sliderRef.current.offsetLeft;
-    const walk = (x - startX) * 1.5; // Drag sensitivity
-    if (Math.abs(walk) > 5) {
-      setHasDragged(true);
+    if (!nextCard || currentScroll >= maxScroll - 10) {
+      slider.scrollTo({
+        left: 0,
+        behavior: "smooth",
+      });
+      return;
     }
-    sliderRef.current.scrollLeft = scrollLeft - walk;
+
+    slider.scrollTo({
+      left: nextCard.offsetLeft - (slider.offsetLeft || 0),
+      behavior: "smooth",
+    });
+
+  }, 3000);
+
+  return () => clearInterval(interval);
+}, [isHovered, isDragging]);
+
+  // Mouse Drag
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    const slider = sliderRef.current;
+    if (!slider) return;
+
+    setIsDragging(true);
+    hasDragged.current = false;
+
+    startX.current = e.pageX;
+    scrollStart.current = slider.scrollLeft;
   };
 
-  const handleMouseUpOrLeave = () => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!isDragging || !sliderRef.current) return;
+
+    const walk = (e.pageX - startX.current) * 1.5;
+
+    if (Math.abs(walk) > 5) {
+      hasDragged.current = true;
+    }
+
+    sliderRef.current.scrollLeft = scrollStart.current - walk;
+  };
+
+  const handleMouseUp = () => {
     setIsDragging(false);
-    setIsHovered(false);
   };
 
   return (
-    <section className="py-10 bg-white">
-      {/* Main Container */}
+    <section className="bg-white py-3 md:py-10">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
+
         {/* Section Header */}
-        <div className="flex items-center justify-between mb-6">
+        <div className="mb-6 flex items-center justify-between">
           <h2 className="text-xl font-extrabold tracking-tight text-[#06172E] sm:text-2xl">
             Search by Brands
           </h2>
+
           <Link
             href="/brands"
-            className="text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors"
+            className="text-sm font-semibold text-blue-600 transition-colors hover:text-blue-700"
           >
             View All &rarr;
           </Link>
         </div>
 
-        {/* Slider Wrapper with Edge Fade */}
+        {/* Slider Wrapper */}
         <div className="relative group">
-          {/* Left Fade Gradient */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-white to-transparent z-10" />
-          {/* Right Fade Gradient */}
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-white to-transparent z-10" />
+
+          {/* Left Fade */}
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-white to-transparent" />
+
+          {/* Right Fade */}
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-white to-transparent" />
 
           {/* Scrollable Track */}
           <div
             ref={sliderRef}
             onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={handleMouseUpOrLeave}
+            onMouseLeave={() => {
+              setIsHovered(false);
+              setIsDragging(false);
+            }}
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
-            onMouseUp={() => setIsDragging(false)}
-            className={`flex items-center gap-6 md:gap-8 overflow-x-auto select-none py-3 no-scrollbar ${
+            onMouseUp={handleMouseUp}
+            onTouchStart={() => setIsHovered(true)}
+            onTouchEnd={() => setIsHovered(false)}
+            className={`flex items-center gap-3 overflow-x-auto select-none py-3 md:gap-8 ${
               isDragging ? 'cursor-grabbing' : 'cursor-grab'
             }`}
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            style={{
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+              WebkitOverflowScrolling: 'touch',
+            }}
           >
+
             {infiniteBrands.map((brand, index) => (
               <Link
                 key={`${brand.slug}-${index}`}
                 href={`/search?brand=${brand.slug}`}
                 draggable={false}
                 onClick={(e) => {
-                  // Prevent accidental navigation while dragging
-                  if (hasDragged) e.preventDefault();
+                  if (hasDragged.current) {
+                    e.preventDefault();
+                    hasDragged.current = false;
+                  }
                 }}
-                className="flex flex-col items-center flex-shrink-0 group/item w-20"
+                className="group/item flex w-20 shrink-0 flex-col items-center"
               >
-                {/* Circular Brand Badge */}
+
+                {/* Original Circular Brand Badge */}
                 <div
-                  className={`w-16 h-16 md:w-[72px] md:h-[72px] rounded-full shadow-sm flex flex-col items-center justify-center p-2 transition-transform duration-200 group-hover/item:scale-105 group-hover/item:shadow-md ${brand.bgColor} ${brand.textColor}`}
+                  className={`relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-full p-2 shadow-sm transition-all duration-300 group-hover/item:scale-105 group-hover/item:shadow-md md:h-[100px] md:w-[100px] ${brand.bgColor} ${brand.textColor}`}
                 >
-                  {brand.icon ? (
-                    brand.icon
-                  ) : (
-                    <>
-                      <span
-                        className={`font-bold tracking-tight text-center leading-none ${
-                          (brand.logoText?.length || 0) > 6
-                            ? 'text-[10px]'
-                            : (brand.logoText?.length || 0) > 4
-                            ? 'text-xs'
-                            : 'text-base md:text-lg'
-                        }`}
-                      >
+
+                  {/* Brand Logo */}
+                  {/* <div className="absolute left-0 right-0 top-3 z-20 flex justify-center">
+                    {brand.icon ? (
+                      brand.icon
+                    ) : (
+                      <span className="text-[9px] font-extrabold leading-none">
                         {brand.logoText}
                       </span>
-                      {brand.subText && (
-                        <span className="text-[7px] text-gray-300 mt-0.5">
-                          {brand.subText}
-                        </span>
-                      )}
-                    </>
-                  )}
+                    )}
+                  </div> */}
+
+                  {/* Smartphone Image */}
+                  <img
+                    src={brand.image}
+                    alt={`${brand.name} smartphone`}
+                    loading="lazy"
+                    draggable={false}
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                    }}
+                    className="absolute bottom-0 left-1/2 h-[76%] w-[76%] -translate-x-1/2 object-contain object-bottom mix-blend-multiply drop-shadow-md transition-transform duration-300 group-hover/item:scale-110"
+                  />
+
+
                 </div>
 
-                {/* Brand Label */}
-                <span className="mt-2.5 text-[11px] font-semibold tracking-wider text-gray-700 uppercase text-center group-hover/item:text-blue-600 transition-colors">
+
+                {/* Original Brand Label */}
+                <span className="mt-2.5 text-center text-[11px] font-semibold uppercase tracking-wider text-gray-700 transition-colors group-hover/item:text-blue-600">
                   {brand.name}
                 </span>
+
               </Link>
             ))}
+
           </div>
         </div>
       </div>
