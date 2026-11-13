@@ -381,7 +381,7 @@ useEffect(() => {
 
                 {/* Original Circular Brand Badge */}
                 <div
-                  className={`relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-full p-2 shadow-sm transition-all duration-300 group-hover/item:scale-105 group-hover/item:shadow-md md:h-[100px] md:w-[100px] ${brand.bgColor} ${brand.textColor}`}
+                  className={`relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-full p-2 shadow-sm transition-all duration-300 group-hover/item:scale-105 border border-slate-200 bg-white p-3.5 shadow-sm transition-all duration-200 hover:border-[#0866FF] hover:shadow-md group-hover/item:shadow-md md:h-[100px] md:w-[100px] ${brand.textColor}`}
                 >
 
                   {/* Brand Logo */}

@@ -14,84 +14,70 @@ interface ServiceCategory {
 
 const phoneServices: ServiceCategory[] = [
   {
-    id: "buy-new-phone",
-    label: "Buy New Phone",
+    id: "buy-a-phone",
+    label: "Buy a phone",
     href: "/buy-phones?condition=new",
     imageUrl:
       "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: "second-hand-phones",
-    label: "Used Phone",
+    label: "Exchange Devices",
     href: "/buy-phones?condition=second-hand",
     imageUrl:
       "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&w=900&q=85",
   },
   {
     id: "sell-phone",
-    label: "Sell Phone",
+    label: "Sell Old Phones",
     href: "/sell-phone",
     imageUrl:
       "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https%3A/assets.cdn.filesafe.space/NuU5xdJ2Kv99cKZVzFGr/media/68e93f25476e1f798d149768.png",
   },
   {
     id: "live-phone-bids",
-    label: "Bid on Phones",
+    label: "Bid On Phones",
     href: "/auctions",
     imageUrl:
       "https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=900&q=85",
   },
   {
-    id: "compare-dealer-prices",
-    label: "Compare Prices",
+    id: "compare-smart-phones",
+    label: "5G Smart Phones",
     href: "/buy-phones",
     imageUrl:
       "https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=900&q=85",
   },
   {
-    id: "nearby-mobile-stores",
-    label: "Nearby Stores",
+    id: "budget-mobile",
+    label: "Budget Phones",
     href: "/dealers",
     imageUrl:
       "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=900&q=85",
   },
 
   {
-    id: "5g-smartphones",
-    label: "5G Smartphones",
+    id: "nearby-stor",
+    label: "Nearby Stores",
     href: "/buy-phones?search=5G",
     imageUrl:
       "https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=900&q=85",
   },
   {
-    id: "4g-smartphones",
-    label: "4G Smartphones",
+    id: "broken-phones",
+    label: "Broken Phones",
     href: "/buy-phones?search=4G",
     imageUrl:
       "https://images.unsplash.com/photo-1603891128711-11b4b03bb138?auto=format&fit=crop&w=900&q=85",
   },
   {
-    id: "budget-phones",
-    label: "Budget Phones",
+    id: "dead-phones",
+    label: "Dead Phones",
     href: "/buy-phones?search=Redmi",
     imageUrl:
       "https://images.unsplash.com/photo-1546054454-aa26e2b734c7?auto=format&fit=crop&w=900&q=85",
   },
-  {
-    id: "exchange-upgrade",
-    label: "Exchange Phone",
-    href: "/sell-phone",
-    imageUrl:
-      "https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=900&q=85",
-  },
- 
-  {
-    id: "dad-phones",
-    label: "Dad Phones",
-    href: "/buy-phones?search=Redmi",
-    imageUrl:
-      "https://images.pexels.com/photos/1268513/pexels-photo-1268513.jpeg",
-  },
+  
 ];
 
 function ServiceCard({ service }: { service: ServiceCategory }) {
@@ -131,7 +117,7 @@ export default function OurServices() {
         </div>
 
         {/* Responsive Services Grid */}
-        <div className="grid grid-cols-3 gap-x-3 gap-y-6 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8">
+        <div className="grid grid-cols-3 gap-x-3 gap-y-6 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9">
           {phoneServices.map((service) => (
             <ServiceCard
               key={service.id}

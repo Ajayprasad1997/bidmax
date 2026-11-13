@@ -42,3 +42,41 @@ body {
   -webkit-overflow-scrolling: touch;
   overscroll-behavior-x: contain;
 }
+
+
+      {/* =========================
+          MOBILE ANIMATIONS
+      ========================= */}
+
+    @keyframes slideLeft {
+          from {
+            transform: translateX(-100%);
+          }
+          to {
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes slideRight {
+          from {
+            transform: translateX(100%);
+          }
+          to {
+            transform: translateX(0);
+          }
+        }
+
+        .animate-slide-left {
+          animation: slideLeft 0.28s ease-out;
+        }
+
+        .animate-slide-right {
+          animation: slideRight 0.28s ease-out;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .animate-slide-left,
+          .animate-slide-right {
+            animation: none;
+          }
+        }
