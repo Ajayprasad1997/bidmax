@@ -2,7 +2,9 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowUpRight, ChevronRight } from "lucide-react";
+import { ArrowUpRight, ChevronRight,Smartphone,
+  Sparkles,
+  Search } from "lucide-react";
 
 interface DealCard {
   id: string;
@@ -74,7 +76,7 @@ const hotDealsCards: DealCard[] = [
 
 export default function HotDeals() {
   return (
-    <section className="w-full bg-white py-8 sm:py-10">
+    <section className="w-full bg-white py-2 sm:py-10">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
         {/* Section Heading & Subtitle (Matches Reference Screenshot) */}
         <div className="mb-6">
@@ -142,28 +144,83 @@ export default function HotDeals() {
           ))}
         </div>
          {/* Bottom CTA */}
-        
-       <div className="mt-12 rounded-2xl bg-gradient-to-r from-[#172554] to-[#2563eb] px-6 py-8 text-center sm:px-10">
-          <h3 className="mt-1 text-xl font-extrabold text-white sm:text-2xl">
-            Looking for a Specific Smartphone Model?
-          </h3>
+      
+        {/* SMARTPHONE DEMAND CTA SECTION */}
+        <div className="relative mt-3 md:mt-14 overflow-hidden rounded-[28px] border border-blue-400/20 bg-gradient-to-br from-[#071B42] via-[#123B85] to-[#0866FF] px-6 py-7 md:py-12 shadow-2xl shadow-blue-900/20 sm:px-10 lg:px-14">
 
-          <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-blue-100">
-            Can't find the smartphone you're looking for? Send your demand on
-            BidMax and let us help you connect with the right seller. All
-            pre-owned phone sales are securely facilitated through BidMax,
-            ensuring a trusted transaction with a transparent 7.5% commission.
-          </p>
+          {/* Background Effects */}
+          <div className="absolute -right-20 -top-24 h-72 w-72 rounded-full bg-blue-400/20 blur-3xl" />
+          <div className="absolute -bottom-24 -left-20 h-72 w-72 rounded-full bg-cyan-400/20 blur-3xl" />
 
-          <Link
-            href="/send-demand"
-            className="mt-6 inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-white px-7 py-4 text-sm font-extrabold text-[#0866FF] shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-blue-50"
-          >
-            Send Your Demand
-            <ArrowUpRight size={17} />
-          </Link>
+          {/* Decorative Circles */}
+          <div className="absolute right-10 top-8 h-32 w-32 rounded-full border border-white/10 sm:right-20 sm:h-48 sm:w-48" />
+          <div className="absolute right-20 top-16 h-20 w-20 rounded-full border border-white/10 sm:right-32 sm:top-20 sm:h-32 sm:w-32" />
 
+          <div className="relative z-10 grid items-center gap-1 md:gap-10 md:grid-cols-12">
+
+            {/* LEFT CONTENT */}
+            <div className="text-center md:col-span-8 md:text-left">
+              
+              <h3 className="text-2xl font-extrabold leading-tight text-white sm:text-3xl lg:text-4xl">
+                Looking for a
+                <span className="text-cyan-300"> Specific Smartphone </span>
+                Model?
+              </h3>
+
+              <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-blue-100 sm:text-base md:mx-0">
+                Can't find the smartphone you're looking for? Tell us your preferred
+                brand and model.
+              </p>
+
+              <div className="mt-7 flex flex-col items-center gap-4 sm:flex-row sm:justify-center md:justify-start">
+
+                <Link
+                  href="/send-demand"
+                  className="group inline-flex items-center justify-center gap-3 rounded-full bg-white px-8 py-4 text-sm font-extrabold text-[#0755D9] shadow-xl shadow-blue-950/20 transition-all duration-300 hover:-translate-y-1 hover:bg-cyan-50 hover:shadow-2xl"
+                >
+                  Send Your Demand
+                  <ArrowUpRight
+                    size={19}
+                    className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                  />
+                </Link>
+
+              </div>
+            </div>
+
+            {/* RIGHT PHONE ILLUSTRATION */}
+            <div className="relative flex h-48 items-center justify-center md:col-span-4 md:h-64">
+
+              {/* Glow */}
+              <div className="absolute h-40 w-40 rounded-full bg-cyan-300/20 blur-3xl sm:h-52 sm:w-52" />
+
+              {/* Floating Phone Icons */}
+              <div className="absolute left-4 top-7 rotate-[-15deg] rounded-2xl border border-white/20 bg-white/10 p-4 text-cyan-200 shadow-xl backdrop-blur-lg sm:left-5">
+                <Smartphone size={34} />
+              </div>
+
+              <div className="absolute right-5 top-5 rotate-[15deg] rounded-2xl border border-white/20 bg-white/10 p-3 text-blue-100 shadow-xl backdrop-blur-lg">
+                <Smartphone size={27} />
+              </div>
+
+              {/* Main Phone */}
+              <div className="relative z-10 flex h-40 w-24 rotate-[-7deg] items-center justify-center rounded-[26px] border-[5px] border-slate-300/80 bg-gradient-to-br from-slate-900 to-blue-950 shadow-2xl shadow-black/40 sm:h-48 sm:w-28">
+                <div className="absolute left-1/2 top-2 h-2 w-10 -translate-x-1/2 rounded-full bg-slate-500" />
+
+                <div className="flex h-[78%] w-[82%] flex-col items-center justify-center rounded-[17px] bg-gradient-to-br from-[#087BFF] via-[#1646B5] to-[#071B42]">
+                  <Smartphone size={34} className="text-white" />
+                  <span className="mt-2 text-[9px] font-black tracking-widest text-cyan-200">
+                    BIDMAX
+                  </span>
+                  <span className="mt-1 text-[7px] font-medium text-white/70">
+                    FIND YOUR PHONE
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
 
       </div>
       

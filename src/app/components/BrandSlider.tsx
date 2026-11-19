@@ -316,11 +316,11 @@ useEffect(() => {
   };
 
   return (
-    <section className="bg-white py-3 md:py-10">
+    <section className="bg-white py-1 md:py-10">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
-        <div className="mb-6 flex items-center justify-between">
+        <div className="mb-2 md:mb-6 flex items-center justify-between">
           <h2 className="text-xl font-extrabold tracking-tight text-[#06172E] sm:text-2xl">
             Search by Brands
           </h2>
@@ -368,7 +368,7 @@ useEffect(() => {
             {infiniteBrands.map((brand, index) => (
               <Link
                 key={`${brand.slug}-${index}`}
-                href={`/search?brand=${brand.slug}`}
+                href={`/mobile-phones`}
                 draggable={false}
                 onClick={(e) => {
                   if (hasDragged.current) {
@@ -412,7 +412,7 @@ useEffect(() => {
 
 
                 {/* Original Brand Label */}
-                <span className="mt-2.5 text-center text-[11px] font-semibold uppercase tracking-wider text-gray-700 transition-colors group-hover/item:text-blue-600">
+                <span className="mt-2.5 text-center text-[12px] font-bold uppercase tracking-wider text-black-700 transition-colors group-hover/item:text-blue-700">
                   {brand.name}
                 </span>
 

@@ -36,10 +36,10 @@ const iphoneCollection: Iphone[] = [
     discount: "17%",
     rating: "4.9",
     condition: "Like New",
-    href: "/buy-phones?search=iPhone+16+Pro+Max",
+    href: "/product/iphone-16-pro-max",
   },
   {
-    id: "Oppo-Find-X6-Pro",
+    id: "oppo-find-x6-pro",
     title: "Oppo Find X6 Pro (256GB)",
     imageUrl:
       "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&auto=format&fit=crop&q=80",
@@ -49,11 +49,11 @@ const iphoneCollection: Iphone[] = [
     discount: "16%",
     rating: "4.8",
     condition: "Excellent",
-    href: "/buy-phones?search=iPhone+16+Pro",
+    href: "/product/oppo-find-x6-pro",
   },
   {
-    id: "relmi-16",
-    title: "Realmi 16 (256GB)",
+    id: "realme-16",
+    title: "Realme 16 (256GB)",
     imageUrl:
       "https://images.unsplash.com/photo-1605236453806-6ff36851218e?w=600&auto=format&fit=crop&q=80",
     badge: "BIDMAX SELECT",
@@ -62,7 +62,7 @@ const iphoneCollection: Iphone[] = [
     discount: "33%",
     rating: "4.8",
     condition: "Excellent",
-    href: "/buy-phones?search=iPhone+15+Pro+Max",
+    href: "/product/realme-16",
   },
   {
     id: "iphone-15",
@@ -75,7 +75,7 @@ const iphoneCollection: Iphone[] = [
     discount: "21%",
     rating: "4.7",
     condition: "Like New",
-    href: "/buy-phones?search=iPhone+15",
+    href: "/product/iphone-15",
   },
   {
     id: "iphone-14-pro",
@@ -88,7 +88,7 @@ const iphoneCollection: Iphone[] = [
     discount: "37%",
     rating: "4.7",
     condition: "Good",
-    href: "/buy-phones?search=iPhone+14+Pro",
+    href: "/product/iphone-14-pro",
   },
   {
     id: "vivo-x90-pro",
@@ -101,7 +101,7 @@ const iphoneCollection: Iphone[] = [
     discount: "42%",
     rating: "4.6",
     condition: "Excellent",
-    href: "/buy-phones?search=iPhone+14",
+    href: "/product/vivo-x90-pro",
   },
 ];
 
@@ -143,31 +143,37 @@ export default function IphoneCollection() {
   // }, [isPaused, slideBy]);
 
   return (
-    <section className="w-full bg-white py-8 sm:py-10">
+    <section className="w-full bg-white py-2 sm:py-10">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="mb-5 flex items-center justify-between">
-          <div>
-            <div className="mb-1 flex items-center gap-2">
-              <Smartphone size={18} className="text-[#0866FF]" />
-              <span className="text-xs font-bold uppercase tracking-wider text-[#0866FF]">
-                Premium Collection 
-              </span>
-              <span className="text-xs">(The Bidmax Commitment to Selling Phones "in Broken Condition," Not Repaired Ones.)</span>
+        <div className="mb-5 flex items-end justify-between gap-3">
+            <div className="min-w-0 flex-1">
+              <div className="mb-1.5 flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-2">
+                <div className="flex items-center gap-2">
+                  <Smartphone size={18} className="shrink-0 text-[#0866FF]" />
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#0866FF]">
+                    Premium Collection
+                  </span>
+                </div>
+
+                <span className="block text-[11px] leading-snug text-slate-600 sm:inline sm:text-xs">
+                  (The Bidmax Commitment to Selling Phones &quot;in Broken Condition,&quot; Not Repaired Ones.)
+                </span>
+              </div>
+
+              <h2 className="text-xl font-extrabold tracking-tight text-[#06172E] sm:text-2xl">
+                Used Phone
+              </h2>
             </div>
 
-            <h2 className="text-xl font-extrabold tracking-tight text-[#06172E] sm:text-2xl">
-              Used Phone
-            </h2>
+            <Link
+              href="/buy-phones?search=iPhone"
+              className="shrink-0 whitespace-nowrap pb-0.5 text-xs font-bold text-[#0866FF] hover:underline sm:text-sm"
+            >
+              View All &rarr;
+            </Link>
           </div>
 
-          <Link
-            href="/buy-phones?search=iPhone"
-            className="text-xs font-bold text-[#0866FF] hover:underline sm:text-sm"
-          >
-            View All &rarr;
-          </Link>
-        </div>
 
         {/* Slider */}
         <div

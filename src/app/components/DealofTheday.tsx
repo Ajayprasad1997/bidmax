@@ -41,7 +41,7 @@ const refurbishedMobiles: RefurbishedPhone[] = [
     price: 89999,
     mrp: 118499,
     storeOfferNote: "Pay at Store • 6M Warranty",
-    href: "/buy-phones?search=iPhone+15+Pro&condition=second-hand",
+    href: "/product/iphone-15-pro-refurb",
   },
   {
     id: "galaxy-s24-ultra-refurb",
@@ -56,7 +56,7 @@ const refurbishedMobiles: RefurbishedPhone[] = [
     price: 77999,
     mrp: 129999,
     storeOfferNote: "Direct Retailer Inspection",
-    href: "/buy-phones?search=Galaxy+S24+Ultra&condition=second-hand",
+    href: "/product/galaxy-s24-ultra",
   },
   {
     id: "oneplus-12-5g-refurb",
@@ -70,7 +70,7 @@ const refurbishedMobiles: RefurbishedPhone[] = [
     discountPercent: "-32%",
     price: 47499,
     mrp: 69999,
-    href: "/buy-phones?search=OnePlus+12&condition=second-hand",
+    href: "/product/oneplus-12-5g-refurb",
   },
   {
     id: "pixel-8-pro-refurb",
@@ -85,7 +85,7 @@ const refurbishedMobiles: RefurbishedPhone[] = [
     price: 62999,
     mrp: 106999,
     storeOfferNote: "Original Box & Bill Available",
-    href: "/buy-phones?search=Pixel+8+Pro&condition=second-hand",
+    href: "/product/pixel-8-pro-refurb",
   },
   {
     id: "galaxy-z-flip6-refurb",
@@ -99,7 +99,7 @@ const refurbishedMobiles: RefurbishedPhone[] = [
     discountPercent: "-44%",
     price: 61999,
     mrp: 109999,
-    href: "/buy-phones?search=Z+Flip6&condition=second-hand",
+    href: "/product/galaxy-z-flip6",
   },
   {
     id: "iphone-14-refurb",
@@ -114,7 +114,7 @@ const refurbishedMobiles: RefurbishedPhone[] = [
     price: 43500,
     mrp: 69900,
     storeOfferNote: "90%+ Battery Health Checked",
-    href: "/buy-phones?search=iPhone+14&condition=second-hand",
+    href: "/product/1",
   },
 ];
 
@@ -216,7 +216,7 @@ export default function RefurbishedMobilesSlider() {
     };
   return (
     <section
-      className="relative w-full bg-white py-8 sm:py-10 select-none"
+      className="relative w-full bg-white py-3 sm:py-10 select-none"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => {
         setIsPaused(false);
@@ -232,7 +232,7 @@ export default function RefurbishedMobilesSlider() {
           </h2>
 
           <Link
-            href="/buy-phones?condition=second-hand"
+            href="/mobile-phones/"
             className="text-xs font-bold text-[#0866FF] hover:underline sm:text-sm"
           >
             View All &rarr;

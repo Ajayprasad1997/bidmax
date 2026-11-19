@@ -36,7 +36,7 @@ const samsungCollection: SamsungPhone[] = [
     discount: "15%",
     rating: "4.9",
     condition: "Like New",
-    href: "/buy-phones?search=Samsung+Galaxy+S25+Ultra",
+    href: "/product/galaxy-s25-ultra",
   },
   {
     id: "galaxy-s24-ultra",
@@ -49,7 +49,7 @@ const samsungCollection: SamsungPhone[] = [
     discount: "40%",
     rating: "4.9",
     condition: "Excellent",
-    href: "/buy-phones?search=Samsung+Galaxy+S24+Ultra",
+    href: "/product/galaxy-s24-ultra",
   },
   {
     id: "galaxy-s23-ultra",
@@ -62,7 +62,7 @@ const samsungCollection: SamsungPhone[] = [
     discount: "33%",
     rating: "4.8",
     condition: "Excellent",
-    href: "/buy-phones?search=Samsung+Galaxy+S23+Ultra",
+    href: "/product/galaxy-s23-ultra",
   },
   {
     id: "galaxy-z-fold6",
@@ -75,7 +75,7 @@ const samsungCollection: SamsungPhone[] = [
     discount: "33%",
     rating: "4.8",
     condition: "Like New",
-    href: "/buy-phones?search=Samsung+Galaxy+Z+Fold6",
+    href: "/product/galaxy-z-fold6",
   },
   {
     id: "galaxy-z-flip6",
@@ -88,7 +88,7 @@ const samsungCollection: SamsungPhone[] = [
     discount: "43%",
     rating: "4.7",
     condition: "Excellent",
-    href: "/buy-phones?search=Samsung+Galaxy+Z+Flip6",
+    href: "/product/galaxy-z-flip6",
   },
   {
     id: "galaxy-a55",
@@ -101,7 +101,7 @@ const samsungCollection: SamsungPhone[] = [
     discount: "42%",
     rating: "4.6",
     condition: "Good",
-    href: "/buy-phones?search=Samsung+Galaxy+A55",
+    href: "/product/galaxy-a55",
   },
 ];
 
@@ -131,18 +131,18 @@ export default function SamsungGalaxyCollection() {
     }
   }, []);
 
-  useEffect(() => {
-    if (isPaused) return;
+  // useEffect(() => {
+  //   if (isPaused) return;
 
-    const interval = setInterval(() => {
-      slideBy("right");
-    }, 3500);
+  //   const interval = setInterval(() => {
+  //     slideBy("right");
+  //   }, 3500);
 
-    return () => clearInterval(interval);
-  }, [isPaused, slideBy]);
+  //   return () => clearInterval(interval);
+  // }, [isPaused, slideBy]);
 
   return (
-    <section className="w-full bg-white py-8 sm:py-10">
+    <section className="w-full bg-white py-2 sm:py-10">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-5 flex items-center justify-between">
@@ -150,12 +150,12 @@ export default function SamsungGalaxyCollection() {
             <div className="mb-1 flex items-center gap-2">
               <Smartphone size={18} className="text-[#0866FF]" />
               <span className="text-xs font-bold uppercase tracking-wider text-[#0866FF]">
-                Samsung Collection
+                Auction Collection
               </span>
             </div>
 
             <h2 className="text-xl font-extrabold tracking-tight text-[#06172E] sm:text-2xl">
-              Explore Samsung Galaxy Phones
+              Auction Phones
             </h2>
           </div>
 
@@ -163,7 +163,7 @@ export default function SamsungGalaxyCollection() {
             href="/buy-phones?search=Samsung"
             className="text-xs font-bold text-[#0866FF] hover:underline sm:text-sm"
           >
-            View All
+            View All &rarr;
           </Link>
         </div>
 
@@ -195,12 +195,12 @@ export default function SamsungGalaxyCollection() {
                 className="group flex w-[248px] shrink-0 flex-col rounded-2xl border border-slate-200 bg-white p-3.5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#0866FF] hover:shadow-lg sm:w-[258px]"
               >
                 {/* Verified Badge */}
-                <div className="mb-2 flex items-center justify-between">
+                {/* <div className="mb-2 flex items-center justify-between">
                   <span className="inline-flex items-center gap-1 rounded-md bg-[#06172E] px-2 py-1 text-[10px] font-extrabold tracking-wide text-white">
                     <ShieldCheck size={12} className="text-sky-400" />
                     {phone.badge}
                   </span>
-                </div>
+                </div> */}
 
                 {/* Product Image */}
                 <div className="my-2 flex h-44 w-full items-center justify-center overflow-hidden rounded-xl bg-slate-50 p-3">
@@ -254,7 +254,7 @@ export default function SamsungGalaxyCollection() {
                 {/* Footer */}
                 <div className="mt-3 border-t border-slate-100 pt-3">
                   <span className="text-[11px] font-semibold text-[#0866FF]">
-                    Explore Samsung Details →
+                    Bid On Phone →
                   </span>
                 </div>
               </Link>

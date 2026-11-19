@@ -39,7 +39,7 @@ import {
   RotateCcw,
   CheckSquare,
   Signal,
-} from "lucide-react";
+  } from "lucide-react";
 
 /* =========================
    TYPES
@@ -94,22 +94,22 @@ const demoProducts: Product[] = [
 
 const navItems = [
   { label: "Search By Brands", href: "/" },
-  { label: "Buy Phones", href: "/buy-phones", icon: Smartphone },
+  { label: "Buy Phones", href: "/mobile-phones", icon: Smartphone },
   { label: "Sell Phone", href: "/sell-phone", icon: Store },
-  { label: "Bid / Auctions", href: "/auctions", icon: Gavel },
+  { label: "Bid / Auctions", href: "/mobile-phones", icon: Gavel },
   { label: "Dealers", href: "/dealers" },
   { label: "How It Works", href: "/how-it-works" },
   { label: "Contact", href: "/contact" },
 ];
 
 const leftColumnBrands = [
-  { label: "Apple iPhone", href: "/buy-phones?search=iPhone" },
-  { label: "Samsung", href: "/buy-phones?search=Samsung" },
-  { label: "OnePlus", href: "/buy-phones?search=OnePlus" },
-  { label: "Google Pixel", href: "/buy-phones?search=Pixel" },
-  { label: "Xiaomi / Redmi", href: "/buy-phones?search=Redmi" },
-  { label: "Motorola", href: "/buy-phones?search=Motorola" },
-  { label: "Foldable Phones", href: "/buy-phones?search=Fold" },
+  { label: "Apple iPhone", href: "/mobile-phones" },
+  { label: "Samsung", href: "/mobile-phones" },
+  { label: "OnePlus", href: "/mobile-phones" },
+  { label: "Google Pixel", href: "/mobile-phones" },
+  { label: "Xiaomi / Redmi", href: "/mobile-phones" },
+  { label: "Motorola", href: "/mobile-phones" },
+  { label: "Foldable Phones", href: "/mobile-phones" },
 ];
 
 const rightColumnCategories = [
@@ -644,21 +644,21 @@ export default function Header() {
               <ChevronDown size={13} />
             </button>
 
-            <Link
+            {/* <Link
               href="/wishlist"
               className="flex h-10 w-10 items-center justify-center rounded-full hover:bg-blue-50"
               aria-label="Wishlist"
             >
               <Heart size={20} />
-            </Link>
+            </Link> */}
 
-            <Link
+            {/* <Link
               href="/cart"
               className="flex h-10 w-10 items-center justify-center rounded-full hover:bg-blue-50"
               aria-label="Cart"
             >
               <ShoppingCart size={20} />
-            </Link>
+            </Link> */}
 
             <div
               className="relative"
@@ -694,12 +694,12 @@ export default function Header() {
                       Login
                     </Link>
 
-                    <Link
+                    {/* <Link
                       href="/register"
                       className="mt-3 flex h-11 items-center justify-center rounded-full border border-gray-200 text-sm font-bold text-[#06172E]"
                     >
                       Create Account
-                    </Link>
+                    </Link> */}
 
                   </div>
                 </div>
@@ -717,19 +717,7 @@ export default function Header() {
       <div className="relative border-b border-gray-100 bg-white lg:hidden">
 
         <div className="flex h-[65px] items-center justify-between gap-2 px-3 sm:px-4">
-
-          {/* MENU BUTTON */}
-
-          <button
-            type="button"
-            onClick={() => setMobileMenu(true)}
-            aria-label="Open navigation menu"
-            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-[#06172E] transition hover:bg-blue-50"
-          >
-            <Menu size={23} strokeWidth={2} />
-          </button>
-
-          {/* LOGO */}
+           {/* LOGO */}
 
           <Link href="/" className="flex min-w-0 items-center justify-center">
             <Image
@@ -741,6 +729,9 @@ export default function Header() {
               className="h-[57px] w-[65px] object-contain"
             />
           </Link>
+          
+
+         
 
           {/* TOP ACTIONS */}
 
@@ -767,7 +758,16 @@ export default function Header() {
             >
               <MapPin size={21} />
             </button>
+           {/* MENU BUTTON */}
 
+          <button
+            type="button"
+            onClick={() => setMobileMenu(true)}
+            aria-label="Open navigation menu"
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-[#06172E] transition hover:bg-blue-50"
+          >
+            <Menu size={23} strokeWidth={2} />
+          </button>
           </div>
         </div>
 
@@ -1519,7 +1519,7 @@ export default function Header() {
                   id="account-email"
                   type="email"
                   required
-                  placeholder="Enter your email address"
+                  placeholder="Email Address / Phone"
                   className="h-12 w-full rounded-xl border border-gray-200 px-4 text-sm outline-none focus:border-[#0866FF]"
                 />
               </div>
@@ -1784,90 +1784,64 @@ export default function Header() {
       {/* =========================
           MOBILE FIXED BOTTOM NAVIGATION
       ========================= */}
+<div className="fixed bottom-0 left-0 right-0 z-[90] border-t border-gray-200 bg-white/95 shadow-[0_-5px_25px_rgba(6,23,46,0.08)] backdrop-blur-xl lg:hidden">
 
-      <div className="fixed bottom-0 left-0 right-0 z-[90] border-t border-gray-200 bg-white/95 shadow-[0_-5px_25px_rgba(6,23,46,0.08)] backdrop-blur-xl lg:hidden">
+  <div className="mx-auto grid h-[66px] max-w-xl grid-cols-5 items-center px-2 pb-[env(safe-area-inset-bottom)]">
 
-        <div className="mx-auto grid h-[66px] max-w-xl grid-cols-5 items-center px-2 pb-[env(safe-area-inset-bottom)]">
+    {/* HOME */}
+    <Link
+      href="/"
+      className="flex flex-col items-center justify-center gap-1 text-[#0866FF]"
+    >
+      <Home size={21} strokeWidth={2} />
+      <span className="text-[9px] font-bold">Home</span>
+    </Link>
 
-          {/* HOME */}
+    {/* SEARCH */}
+    <button
+      type="button"
+      onClick={() => {
+        setSearchOpen(true);
+        setMobileMenu(false);
+      }}
+      className={`flex flex-col items-center justify-center gap-1 ${
+        searchOpen ? "text-[#0866FF]" : "text-gray-500"
+      }`}
+    >
+      <Search size={21} strokeWidth={2} />
+      <span className="text-[9px] font-semibold">Search</span>
+    </button>
 
-          <Link
-            href="/"
-            className="flex flex-col items-center justify-center gap-1 text-[#0866FF]"
-          >
-            <Home size={21} strokeWidth={2} />
-            <span className="text-[9px] font-bold">Home</span>
-          </Link>
+    {/* BUY PHONE */}
+    <Link
+      href="/buy-phone"
+      className="flex flex-col items-center justify-center gap-1 text-gray-500 transition hover:text-[#0866FF]"
+    >
+      <Smartphone size={21} strokeWidth={2} />
+      <span className="text-[9px] font-semibold">Buy Phone</span>
+    </Link>
 
-          {/* SEARCH */}
+    {/* SELL PHONE */}
+    <Link
+      href="/sell-phone"
+      className="flex flex-col items-center justify-center gap-1 text-gray-500 transition hover:text-[#0866FF]"
+    >
+      <Tag size={21} strokeWidth={2} />
+      <span className="text-[9px] font-semibold">Sell Phone</span>
+    </Link>
 
-          <button
-            type="button"
-            onClick={() => {
-              setSearchOpen(true);
-              setMobileMenu(false);
-            }}
-            className={`flex flex-col items-center justify-center gap-1 ${
-              searchOpen ? "text-[#0866FF]" : "text-gray-500"
-            }`}
-          >
-            <Search size={21} strokeWidth={2} />
-            <span className="text-[9px] font-semibold">Search</span>
-          </button>
+    {/* ACCOUNT */}
+    <button
+      type="button"
+      onClick={openAccount}
+      className="flex flex-col items-center justify-center gap-1 text-gray-500 transition hover:text-[#0866FF]"
+    >
+      <UserRound size={21} strokeWidth={2} />
+      <span className="text-[9px] font-semibold">Account</span>
+    </button>
 
-          {/* CART */}
-
-          <button
-            type="button"
-            onClick={openCart}
-            className={`relative flex flex-col items-center justify-center gap-1 ${
-              cartOpen ? "text-[#0866FF]" : "text-gray-500"
-            }`}
-          >
-            <ShoppingCart size={21} strokeWidth={2} />
-
-            {cartItems.length > 0 && (
-              <span className="absolute right-[calc(50%-18px)] top-0 flex h-4 min-w-4 items-center justify-center rounded-full bg-[#0866FF] px-1 text-[9px] font-bold text-white">
-                {cartItems.length}
-              </span>
-            )}
-
-            <span className="text-[9px] font-semibold">Cart</span>
-          </button>
-
-          {/* WISHLIST */}
-
-          <button
-            type="button"
-            onClick={openWishlist}
-            className={`relative flex flex-col items-center justify-center gap-1 ${
-              wishlistOpen ? "text-[#0866FF]" : "text-gray-500"
-            }`}
-          >
-            <Heart size={21} strokeWidth={2} />
-
-            {wishlistItems.length > 0 && (
-              <span className="absolute right-[calc(50%-18px)] top-0 flex h-4 min-w-4 items-center justify-center rounded-full bg-pink-500 px-1 text-[9px] font-bold text-white">
-                {wishlistItems.length}
-              </span>
-            )}
-
-            <span className="text-[9px] font-semibold">Wishlist</span>
-          </button>
-
-          {/* ACCOUNT */}
-
-          <button
-            type="button"
-            onClick={openAccount}
-            className="flex flex-col items-center justify-center gap-1 text-gray-500"
-          >
-            <UserRound size={21} strokeWidth={2} />
-            <span className="text-[9px] font-semibold">Account</span>
-          </button>
-
-        </div>
-      </div>
+  </div>
+</div>
 
 
      

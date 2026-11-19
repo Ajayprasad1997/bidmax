@@ -53,9 +53,9 @@ const trustHighlights = [
 const quickLinks = [
   { label: "Home", href: "/" },
   { label: "Buy Phones", href: "/buy-phones" },
-  { label: "Sell Your Phone", href: "/sell-phone" },
-  { label: "Bid / Live Auctions", href: "/auctions" },
-  { label: "Participating Dealers", href: "/dealers" },
+  { label: "Sell Phone", href: "/sell-phone" },
+  { label: "Bid Auction", href: "/auctions" },
+  { label: "Dealers", href: "/dealers" },
   { label: "How It Works", href: "/how-it-works" },
   { label: "Contact Us", href: "/contact" },
 ];
@@ -63,27 +63,33 @@ const quickLinks = [
 // PHONE CATEGORIES
 const mobileCategories = [
   {
-    label: "New / Sealed-Pack Phones",
-    href: "/buy-phones?condition=new",
+    label: "New Phones",
+    href: "#",
+    icon: Smartphone,
+  },
+   {
+    label: "Sealed-Pack",
+    href: "#",
+    icon: Smartphone,
+  },
+  
+  {
+    label: "Used Phones",
+    href: "#",
     icon: Smartphone,
   },
   {
-    label: "Second-Hand Phones",
-    href: "/buy-phones?condition=second-hand",
+    label: "iPhone",
+    href: "#",
     icon: Smartphone,
   },
   {
-    label: "Apple iPhone",
-    href: "/buy-phones?search=iPhone",
+    label: "Samsung",
+    href: "#",
     icon: Smartphone,
   },
   {
-    label: "Samsung Galaxy",
-    href: "/buy-phones?search=Samsung",
-    icon: Smartphone,
-  },
-  {
-    label: "OnePlus 5G",
+    label: "OnePlus",
     href: "/buy-phones?search=OnePlus",
     icon: Smartphone,
   },
@@ -102,17 +108,17 @@ const mobileCategories = [
 // POLICIES
 const policyLinks = [
   {
-    label: "Terms & Conditions",
+    label: "Terms",
     href: "/terms",
     icon: FileText,
   },
   {
-    label: "Privacy Policy",
+    label: "Privacy",
     href: "/privacy-policy",
     icon: LockKeyhole,
   },
   {
-    label: "Marketplace Disclaimer",
+    label: "Marketplace",
     href: "/disclaimer",
     icon: ShieldCheck,
   },
@@ -159,7 +165,7 @@ export default async function Footer() {
     <footer className="w-full border-t border-slate-200 bg-white text-[#06172E]">
 
       {/* 1. TRUST HIGHLIGHTS */}
-      <div className="border-b border-slate-100 bg-slate-50/70 py-6">
+      <div className="border-b border-slate-100 bg-slate-50/70 py-2 md:py-6">
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
 
           <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-4">
@@ -193,9 +199,9 @@ export default async function Footer() {
       </div>
 
       {/* 2. MAIN FOOTER */}
-      <div className="mx-auto max-w-[1400px] px-4 py-12 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[1400px] px-4 py-4 md:py-12 sm:px-6 lg:px-8">
 
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-12">
+        <div className="grid grid-cols-1 gap-5 md:gap-10 sm:grid-cols-2 lg:grid-cols-12">
 
           {/* COLUMN 1: BRAND */}
           <div className="space-y-5 lg:col-span-5">
@@ -215,16 +221,6 @@ export default async function Footer() {
                 BUY • SELL • BID
               </span>
             </div>
-
-            <p className="max-w-md text-xs leading-relaxed text-slate-600 sm:text-[13.5px]">
-              BidMax (
-              <span className="font-semibold text-[#06172E]">
-                www.bidmax.in
-              </span>
-              ) connects mobile-phone buyers with participating local
-              retailers. Search by phone model and PIN code to compare
-              new sealed-pack and second-hand phone offers near you.
-            </p>
 
             {/* DEALER NETWORK */}
             <div className="flex max-w-sm items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-slate-50/70 px-4 py-3">
@@ -315,6 +311,8 @@ export default async function Footer() {
             </div>
           </div>
 
+<div className="grid grid-cols-2 gap-4 sm:col-span-2 lg:col-span-4 lg:grid-cols-4">
+
           {/* COLUMN 2: QUICK LINKS */}
           <div className="lg:col-span-2">
 
@@ -346,7 +344,7 @@ export default async function Footer() {
 
             <h3 className="flex items-center gap-2 text-sm font-extrabold text-[#06172E]">
               <div className="h-5 w-1 rounded-full bg-[#0866FF]" />
-              Phone Categories
+              Categories
             </h3>
 
             <ul className="mt-5 space-y-3">
@@ -370,7 +368,7 @@ export default async function Footer() {
               })}
             </ul>
           </div>
-
+</div>
           {/* COLUMN 4: POLICIES */}
           <div className="lg:col-span-3">
 
@@ -379,7 +377,7 @@ export default async function Footer() {
               Policies & Trust
             </h3>
 
-            <ul className="mt-5 space-y-3">
+            <ul className="mt-4 md:mt-5 space-y-3">
               {policyLinks.map((policy) => {
                 const Icon = policy.icon;
 
@@ -404,7 +402,7 @@ export default async function Footer() {
         </div>
 
         {/* 3. LOCAL RETAILER COVERAGE */}
-        <div className="mt-12 overflow-hidden rounded-3xl bg-gradient-to-r from-[#102C59] via-[#164A9A] to-[#0866FF] p-6 sm:p-8">
+        <div className="mt-5 md:mt-12 overflow-hidden rounded-3xl bg-gradient-to-r from-[#102C59] via-[#164A9A] to-[#0866FF] p-6 sm:p-8">
 
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-center">
 
@@ -423,9 +421,9 @@ export default async function Footer() {
                   Payment & Logistics Options
                 </h3>
 
-                <p className="mt-2 max-w-xl text-xs leading-6 text-blue-100 sm:text-sm">
+                {/* <p className="mt-2 max-w-xl text-xs leading-6 text-blue-100 sm:text-sm">
                   Launch without Cash on Delivery (COD) to mitigate risk, with plans to add it in ~2 months. Integrate third-party APIs for online payments and EMI options.
-                </p>
+                </p> */}
               </div>
 
             </div>
@@ -441,36 +439,7 @@ export default async function Footer() {
           </div>
         </div>
 
-        {/* 4. MARKETPLACE & EMI DISCLOSURE */}
-        <div className="mt-8 rounded-2xl border border-amber-200 bg-amber-50/70 p-5 sm:p-6">
-
-          <div className="flex items-start gap-3">
-
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-100 text-amber-700">
-              <ShieldCheck size={21} />
-            </div>
-
-            <div>
-              <h3 className="text-sm font-extrabold text-[#06172E]">
-                Platform Role & EMI Disclosure
-              </h3>
-
-              <p className="mt-2 text-xs leading-6 text-slate-600 sm:text-[13px]">
-                BidMax (www.bidmax.in) operates solely as a digital
-                marketplace and lead-generation platform connecting
-                mobile-phone buyers with participating local retailers.
-                Customers pay the retailer directly for the phone;
-                BidMax does not collect the phone purchase price.
-                BidMax is not a lender. EMI applications, customer
-                eligibility, KYC, loan approval and disbursement remain
-                exclusively with the authorised finance company and
-                its representatives.
-              </p>
-            </div>
-
-          </div>
-        </div>
-
+        
       </div>
 
       {/* 5. COPYRIGHT & PAYMENT METHODS */}
@@ -490,39 +459,57 @@ export default async function Footer() {
             </Link>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3">
+         
+<div className="flex flex-wrap items-center gap-3">
 
-            <span className="text-xs font-bold text-slate-600">
-              Accepted at Participating Stores:
-            </span>
+  <span className="text-xs font-bold text-slate-600">
+    Accepted at Participating Stores:
+  </span>
 
-            <div className="flex flex-wrap items-center gap-2">
+  <div className="flex flex-wrap items-center gap-2">
 
-              <div className="flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-extrabold text-[#06172E]">
-                <Wallet size={15} className="text-[#0866FF]" />
-                UPI
-              </div>
+    {/* UPI */}
+    <div className="flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-extrabold text-[#06172E]">
+      <Wallet size={15} className="text-[#0866FF]" />
+      UPI
+    </div>
 
-              <div className="flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-black italic text-blue-800">
-                <CreditCard size={15} />
-                VISA
-              </div>
+    {/* VISA */}
+    <div className="flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-black italic text-blue-800">
+      <CreditCard size={15} />
+      VISA
+    </div>
 
-              <div className="flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-extrabold text-slate-700">
-                <span className="flex items-center">
-                  <span className="h-3.5 w-3.5 rounded-full bg-red-500" />
-                  <span className="-ml-1.5 h-3.5 w-3.5 rounded-full bg-amber-400/90" />
-                </span>
-                Mastercard
-              </div>
+    {/* MASTERCARD */}
+    <div className="flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-extrabold text-slate-700">
+      <span className="flex items-center">
+        <span className="h-3.5 w-3.5 rounded-full bg-red-500" />
+        <span className="-ml-1.5 h-3.5 w-3.5 rounded-full bg-amber-400/90" />
+      </span>
+      Mastercard
+    </div>
 
-              <div className="flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-bold text-[#06172E]">
-                <Banknote size={15} className="text-green-600" />
-                Cash
-              </div>
+    {/* CASH */}
+    <div className="flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-bold text-[#06172E]">
+      <Banknote size={15} className="text-green-600" />
+      Cash
+    </div>
 
-            </div>
-          </div>
+    {/* RAZORPAY */}
+    <div className="flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-extrabold text-[#072654]">
+      <span className="text-base font-black italic text-[#3395FF]">R</span>
+      Razorpay
+    </div>
+
+    {/* PAYPAL */}
+    <div className="flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-extrabold text-[#003087]">
+      <span className="text-base font-black italic text-[#0070E0]">P</span>
+      PayPal
+    </div>
+
+  </div>
+</div>
+
 
         </div>
 

@@ -120,7 +120,7 @@ export default function ShopByPrice() {
   };
 
   return (
-    <section className="w-full bg-white py-8 sm:py-10 select-none">
+    <section className="w-full bg-white py-4 md:py-8 sm:py-10 select-none">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
         {/* Top Row: Two-Tone Italic Heading + Top-Right Mini Arrows */}
         <div className="mb-6 flex items-center justify-between">
@@ -199,7 +199,7 @@ export default function ShopByPrice() {
           </button>
         </div>
           {/* 3. LOCAL RETAILER COVERAGE */}
-        <div className="mt-12 overflow-hidden rounded-3xl bg-gradient-to-r from-[#102C59] via-[#164A9A] to-[#0866FF] p-6 sm:p-8">
+        <div className="mt-3 md:mt-12 overflow-hidden rounded-3xl bg-gradient-to-r from-[#102C59] via-[#164A9A] to-[#0866FF] p-6 sm:p-8">
 
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-center">
 
@@ -217,12 +217,6 @@ export default function ShopByPrice() {
                 <h3 className="mt-1 text-xl font-extrabold text-white sm:text-2xl">
                   Find Mobile Stores Near You
                 </h3>
-
-                <p className="mt-2 max-w-xl text-xs leading-6 text-blue-100 sm:text-sm">
-                  Discover participating local mobile retailers by
-                  entering your PIN code. Explore available phones,
-                  compare dealer offers and connect directly with stores.
-                </p>
               </div>
 
             </div>

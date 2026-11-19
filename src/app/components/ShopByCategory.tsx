@@ -24,18 +24,7 @@ const CATEGORIES: Category[] = [
     image:
       "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&q=85",
   },
-  {
-    name: "Laptop",
-    slug: "laptop",
-    image:
-      "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400&q=85",
-  },
-  {
-    name: "Gaming Laptop",
-    slug: "gaming-laptop",
-    image:
-      "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=400&q=85",
-  },
+  
   {
     name: "Tablet",
     slug: "tablet",
@@ -48,24 +37,14 @@ const CATEGORIES: Category[] = [
     image:
       "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=85",
   },
-  {
-    name: "Smart TV",
-    slug: "smart-tv",
-    image:
-      "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=400&q=85",
-  },
+  
   {
     name: "Speaker",
     slug: "speaker",
     image:
       "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&q=85",
   },
-  {
-    name: "Desktop",
-    slug: "desktop",
-    image:
-      "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=400&q=85",
-  },
+  
   {
     name: "Headphones",
     slug: "headphones",
@@ -84,24 +63,7 @@ const CATEGORIES: Category[] = [
     image:
       "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400&q=85",
   },
-  {
-    name: "Gaming Console",
-    slug: "gaming-console",
-    image:
-      "https://images.unsplash.com/photo-1486401899868-0e435ed85128?w=400&q=85",
-  },
-  {
-    name: "Printer",
-    slug: "printer",
-    image:
-      "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=400&q=85",
-  },
-  {
-    name: "Router",
-    slug: "router",
-    image:
-      "https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=400&q=85",
-  },
+  
   {
     name: "Power Bank",
     slug: "power-bank",
@@ -135,28 +97,29 @@ export default function ShopByCategory() {
   };
 
   return (
-    <section className="bg-white py-10">
+    <section className="bg-white py-2 md:py-10">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="mb-6 flex flex-col justify-between gap-2 sm:flex-row sm:items-end">
-          <div>
-            <h2 className="text-xl font-extrabold tracking-tight text-[#06172E] sm:text-2xl">
-              Shop by Category
-            </h2>
-
-            <p className="mt-1 text-xs text-gray-500 md:text-sm">
-              Browse new and second-hand electronics across multiple categories
-              from trusted local dealers.
-            </p>
-          </div>
+        <div className="mb-6">
+        <div className="flex items-center justify-between gap-3">
+          <h2 className="text-xl font-extrabold tracking-tight text-[#06172E] sm:text-2xl">
+            Shop by Category
+          </h2>
 
           <Link
             href="/categories"
-            className="self-start text-sm font-semibold text-[#0866FF] transition-colors hover:text-[#06172E] sm:self-auto"
+            className="shrink-0 whitespace-nowrap text-xs font-bold text-[#0866FF] transition-colors hover:text-[#06172E] sm:text-sm"
           >
             View All &rarr;
           </Link>
         </div>
+
+        <p className="mt-1 text-xs text-gray-500 md:text-sm">
+          Browse new and second-hand electronics across multiple categories from
+          trusted local dealers.
+        </p>
+      </div>
+
 
         {/* Category Carousel */}
         <div className="relative">

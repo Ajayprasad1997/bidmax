@@ -36,7 +36,7 @@ const phoneServices: ServiceCategory[] = [
   },
   {
     id: "live-phone-bids",
-    label: "Bid On Phones",
+    label: "Go to Auction",
     href: "/auctions",
     imageUrl:
       "https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=900&q=85",
@@ -106,11 +106,11 @@ function ServiceCard({ service }: { service: ServiceCategory }) {
 
 export default function OurServices() {
   return (
-    <section className="w-full bg-white py-8 sm:py-10">
+    <section className="w-full bg-white py-2 sm:py-10">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
-        <div className="mb-6">
+        <div className="mb-3 md:mb-6">
           <h2 className="text-xl font-extrabold tracking-tight text-[#06172E] sm:text-2xl">
             Our Services
           </h2>

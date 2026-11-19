@@ -61,7 +61,7 @@ const exclusiveStores: ExclusiveStore[] = [
 
 const ExclusiveStores = () => {
   return (
-    <section className="relative overflow-hidden bg-[#f7f8fc] py-16 sm:py-20 lg:py-24">
+    <section className="relative overflow-hidden bg-[#f7f8fc] py-3 md:py-16 sm:py-20 lg:py-24">
 
       <div className="mx-auto max-w-[1320px] px-5 sm:px-8 lg:px-12">
 
@@ -158,7 +158,7 @@ const ExclusiveStores = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-12 rounded-2xl bg-gradient-to-r from-[#172554] to-[#2563eb] px-6 py-8 text-center sm:px-10">
+        <div className="mt-3 md:mt-12 rounded-2xl bg-gradient-to-r from-[#172554] to-[#2563eb] px-6 py-8 text-center sm:px-10">
 
           <h3 className="mt-1 text-xl font-extrabold text-white sm:text-2xl">
             Are You a Mobile Phone Retailer?

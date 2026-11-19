@@ -3,6 +3,7 @@ import HeroSlider from "./components/HeroSlider";
 import OurServices from "./components/OurServices";
 import DealofTheday from "./components/DealofTheday";
 import UsedPhone from "./components/UsedPhone";
+import AuctionPhones from "./components/AuctionPhones";
 import ShopByPrice from "./components/ShopByPrice";
 import WhyChooseBidmax from "./components/WhyChooseBidmax";
 import ExclusiveStores from "./components/ExclusiveStores";
@@ -22,6 +23,7 @@ export default function HomePage() {
       <OurServices />
        <DealofTheday />
        <UsedPhone />    
+       <AuctionPhones/>
        <ShopByCategory /> 
        <HotDeals />  
        <ShopByPrice />             

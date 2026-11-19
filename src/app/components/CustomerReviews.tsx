@@ -165,7 +165,7 @@ const CustomerReviews = () => {
   };
 
   return (
-    <section className="relative overflow-hidden bg-[#f7f8fc] py-16 sm:py-20 lg:py-24">
+    <section className="relative overflow-hidden bg-[#f7f8fc] py-3 md:py-16 sm:py-20 lg:py-24">
 
       {/* Background Decoration */}
       <div className="pointer-events-none absolute -left-32 top-20 h-72 w-72 rounded-full bg-blue-100/60 blur-[100px]" />
@@ -174,7 +174,7 @@ const CustomerReviews = () => {
       <div className="relative mx-auto max-w-[1320px] px-5 sm:px-8 lg:px-12">
 
         {/* Heading */}
-        <div className="mx-auto mb-12 max-w-2xl text-center sm:mb-14">
+        <div className="mx-auto mb-3 md:mb-12 max-w-2xl text-center sm:mb-14">
 
           <span className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-xs font-bold uppercase tracking-wider text-blue-700">
             <MessageCircle size={15} />
@@ -191,7 +191,7 @@ const CustomerReviews = () => {
             makes exploring smartphones and local retailer offers easier.
           </p>
 
-          <div className="mx-auto mt-6 h-1 w-20 rounded-full bg-gradient-to-r from-blue-600 to-indigo-500" />
+          <div className="mx-auto mt-2 md:mt-6 h-1 w-20 rounded-full bg-gradient-to-r from-blue-600 to-indigo-500" />
         </div>
 
         {/* Slider */}
@@ -208,7 +208,7 @@ const CustomerReviews = () => {
           </button>
 
           {/* Slider Viewport */}
-          <div className="overflow-hidden px-1 py-5">
+          <div className="overflow-hidden px-1 py-2 md:py-5">
 
             <div
               className="flex transition-transform duration-700 ease-in-out"
@@ -307,7 +307,7 @@ const CustomerReviews = () => {
         </div>
 
         {/* Slider Controls */}
-        <div className="mt-8 flex flex-col items-center justify-center gap-5">
+        <div className="mt-3 md:mt-8 flex flex-col items-center justify-center gap-5">
 
           {/* Dots */}
           <div className="flex items-center justify-center gap-2">
@@ -333,7 +333,7 @@ const CustomerReviews = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-14 flex flex-col items-center justify-between gap-6 rounded-3xl bg-gradient-to-r from-[#172554] via-[#1e40af] to-[#2563eb] p-8 text-center sm:flex-row sm:px-12 sm:text-left">
+        <div className="mt-4 md:mt-14 flex flex-col items-center justify-between gap-6 rounded-3xl bg-gradient-to-r from-[#172554] via-[#1e40af] to-[#2563eb] p-8 text-center sm:flex-row sm:px-12 sm:text-left">
 
           <div>
             <h3 className="mt-1 text-xl font-extrabold text-white sm:text-2xl">

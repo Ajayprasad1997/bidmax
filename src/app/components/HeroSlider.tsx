@@ -137,7 +137,7 @@ export default function HeroSlider() {
       aria-label="Promotional Deals Slider"
     >
       {/* Full-Width Short-Height Banner Container */}
-      <div className="relative w-full h-auto aspect-[16/6] sm:aspect-auto sm:h-[150px] md:h-[320px] lg:h-[411px] overflow-hidden">
+      <div className="relative w-full h-auto aspect-[16/6] sm:aspect-auto sm:h-[200px] md:h-[320px] lg:h-[411px] overflow-hidden">
         {/* Slides Track */}
         <div
           className="flex h-full w-full transition-transform duration-500 ease-out"
